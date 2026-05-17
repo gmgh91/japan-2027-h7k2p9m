@@ -252,6 +252,47 @@
     color: var(--muted);
     font-size: 12px;
   }
+  /* ACCOMMODATION SECTION */
+  .leg-accom {
+    padding: 14px 20px;
+    background: rgba(107,142,142,0.08);
+    border-bottom: 1px solid var(--line);
+  }
+  .leg-accom h4 {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--travel);
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  .accom-item {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.55;
+    padding: 4px 0;
+  }
+  .accom-item strong { color: var(--ink); font-weight: 500; }
+  .accom-item.backup { font-size: 12px; padding-top: 6px; opacity: 0.85; }
+  .accom-link {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--accent);
+    white-space: nowrap;
+  }
+  .accom-link:hover { border-bottom-style: solid; }
+  .accom-status {
+    display: inline-block;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 1px 5px;
+    border-radius: 3px;
+    background: rgba(107,142,142,0.18);
+    color: var(--travel);
+    margin-left: 6px;
+    vertical-align: 1px;
+  }
   /* BONUS SECTION */
   .leg-bonus {
     border-top: 1px dashed var(--line);
@@ -330,6 +371,12 @@
     .status-col li { border-bottom: 1pt dashed #ddd !important; }
     .status-col li:last-child { border-bottom: 0 !important; }
     footer { border-top: 1pt solid #ccc !important; }
+    .leg-accom { background: #eef5f5 !important; border-bottom: 1pt solid #ddd !important; }
+    .leg-accom h4 { color: #4a6a6a !important; }
+    .accom-item { color: #555 !important; }
+    .accom-item strong { color: #1a1a1a !important; }
+    .accom-link { color: #b85c3a !important; }
+    .accom-status { background: rgba(107,142,142,0.18) !important; color: #4a6a6a !important; }
     .leg-bonus { background: #faf6ee !important; border-top: 1pt dashed #ccc !important; page-break-inside: avoid; }
     .leg-bonus h4 { color: #b85c3a !important; }
     .bonus-item { border-bottom: 1pt dashed #ddd !important; color: #555 !important; }
@@ -390,6 +437,10 @@
         <div class="leg-title"><h3>Tokyo</h3><div class="leg-dates">Tue 2 — Sat 6 Feb</div></div>
       </div>
       <div class="leg-blurb">Land late, ease in. A buffer for jetlag, body clocks, and the toddler. Big-city anchor experiences before we head into the mountains.</div>
+      <div class="leg-accom">
+        <h4>Where we're staying</h4>
+        <div class="accom-item"><strong>MIMARU Tokyo Asakusa Station</strong> — apt-hotel, family suites with full kitchens, lift access. 3 min walk to Asakusa Station. <a class="accom-link" href="https://mimaruhotels.com/en/hotel/asakusa-station/" target="_blank">Property →</a><span class="accom-status">TBC</span></div>
+      </div>
       <div class="days">
         <div class="day"><div class="day-date">Tue 2</div><div class="day-body"><span class="tag tag-travel">Travel</span>Brisbane → Tokyo Narita, lands <strong>17:30</strong>. Transfer to hotel (~90 min). Conbini / hotel dinner — likely settled by 21:00.</div></div>
         <div class="day"><div class="day-date">Wed 3</div><div class="day-body"><span class="tag tag-anchor">Anchor</span>Morning: <strong>Kappabashi-dori</strong> kitchen town (knives, ceramics, plastic food samples). Afternoon: <strong>Setsubun at Sensō-ji</strong> — bean-throwing festival, oni costumes.</div></div>
@@ -415,6 +466,10 @@
         <div class="leg-title"><h3>Hakone</h3><div class="leg-dates">Sat 6 — Mon 8 Feb</div></div>
       </div>
       <div class="leg-blurb">Onsen town. Mt Fuji views, volcanic valleys, and the slow-down day before Kyoto.</div>
+      <div class="leg-accom">
+        <h4>Where we're staying</h4>
+        <div class="accom-item"><strong>Hakone Ashinoko Hanaori</strong> — modern lakeside ryokan with private bookable onsens (tattoo-safe), Western-Japanese hybrid rooms (beds + chairs), lift access, family suites. <a class="accom-link" href="https://ashinoko-hanaori.hakonehotelspage.com/en/" target="_blank">Property →</a><span class="accom-status">TBC</span></div>
+      </div>
       <div class="days">
         <div class="day"><div class="day-date">Sat 6</div><div class="day-body"><span class="tag tag-travel">Travel</span>Tokyo → Hakone on Odakyu Romancecar (~85 min). Lunch in Yumoto. Afternoon: <strong>Hakone Open-Air Museum</strong>. Check in to ryokan, onsen + kaiseki dinner.</div></div>
         <div class="day"><div class="day-date">Sun 7</div><div class="day-body"><span class="tag tag-anchor">Anchor</span><strong>The Hakone Loop</strong> — Tozan switchback railway → cable car → ropeway over Owakudani (volcanic valley, black eggs) → pirate ship across Lake Ashi (Fuji views) → Hakone Shrine (torii in the water) → bus back.</div></div>
@@ -433,6 +488,11 @@
         <div class="leg-title"><h3>Kyoto</h3><div class="leg-dates">Mon 8 — Tue 16 Feb</div></div>
       </div>
       <div class="leg-blurb">The cultural heart and the depth leg. Eight nights to slow right down — temples, machiya streets, sake breweries, master craft. Wide day-trip range: Himeji, Nara, Fushimi sake, Yamazaki distillery, Osaka half-day, Kaiyukan aquarium.</div>
+      <div class="leg-accom">
+        <h4>Where we're staying</h4>
+        <div class="accom-item"><strong>Ruikou Machiya</strong> (Machiya Residence Inn) — 4-bedroom heritage machiya, 184m², two buildings around a garden. Western beds + kitchen + dining for Mum and Dad in the detached hanare. Two kitchens. <a class="accom-link" href="https://www.kyoto-machiya-inn.com/accommodations/ruikou/" target="_blank">Property →</a><span class="accom-status">Enquiry in</span></div>
+        <div class="accom-item backup">Backup: <strong>Miyagawacho Samurai Machiya</strong> (Gion-adjacent, 4–5 BR with multiple Western beds). <a class="accom-link" href="https://mykyotomachiya.com/miyagawacho-machiya/" target="_blank">Property →</a></div>
+      </div>
       <div class="days">
         <div class="day"><div class="day-date">Mon 8</div><div class="day-body"><span class="tag tag-travel">Travel</span>Hakone → Kyoto via shinkansen (~2 hr 15). Check in.</div></div>
         <div class="day"><div class="day-date">Tue 9</div><div class="day-body"><span class="tag tag-anchor">Anchor</span><strong>Higashiyama / Gion day</strong> — Kiyomizu-dera, Sannenzaka/Ninenzaka, Yasaka Shrine, Gion wander. Optional free walking tour in the morning.</div></div>
@@ -463,6 +523,10 @@
         <div class="leg-title"><h3>Nozawa Onsen</h3><div class="leg-dates">Tue 16 — Sun 21 Feb</div></div>
       </div>
       <div class="leg-blurb">The snow week. Skiing for those who want it, 13 free public bathhouses, and Sparena for the lower-pressure mixed-bathing option. Nozawa Dream Central is the target accommodation.</div>
+      <div class="leg-accom">
+        <h4>Where we're staying</h4>
+        <div class="accom-item"><strong>Nozawa Dream Central</strong> — chalet-style accommodation in the village, walking distance to lifts and public baths. <a class="accom-link" href="https://www.nozawadream.com/" target="_blank">Property →</a><span class="accom-status">Enquiry pending</span></div>
+      </div>
       <div class="days">
         <div class="day"><div class="day-date">Tue 16</div><div class="day-body"><span class="tag tag-travel">Travel</span>Kyoto → Tokyo → Iiyama → Nozawa (~5 hr door-to-door). Daypacks only — bags arrive separately. <strong>9am Kyoto → ~2:30pm Nozawa.</strong> Check in, onsen, settle.</div></div>
         <div class="day"><div class="day-date">Wed 17</div><div class="day-body"><span class="tag tag-anchor">Anchor</span><strong>Ski day 1.</strong> Girls in lessons. Non-skiers: village + Sparena + Sakaya Honten sake.</div></div>
@@ -478,7 +542,12 @@
         <div class="leg-num">Leg 05 · 4 nights</div>
         <div class="leg-title"><h3>Tokyo</h3><div class="leg-dates">Sun 21 — Thu 25 Feb</div></div>
       </div>
-      <div class="leg-blurb">Back to the city for the wind-down. The sushi-counter dinner. The last surprise. The slow re-pack.</div>
+      <div class="leg-blurb">Back to the city for the wind-down. The sushi-counter dinner. The slow re-pack.</div>
+      <div class="leg-accom">
+        <h4>Where we're staying</h4>
+        <div class="accom-item"><strong>MIMARU Tokyo Asakusa Station</strong> (same as arrival) — apt-hotel, family suites with full kitchens, lift access. 3 min walk to Asakusa Station. <a class="accom-link" href="https://mimaruhotels.com/en/hotel/asakusa-station/" target="_blank">Property →</a><span class="accom-status">TBC</span></div>
+        <div class="accom-item backup">Alternate: <strong>MIMARU Tokyo Shinjuku West</strong> (swap neighbourhood for the wind-down). <a class="accom-link" href="https://mimaruhotels.com/en/hotel/shinjuku-west/" target="_blank">Property →</a></div>
+      </div>
       <div class="days">
         <div class="day"><div class="day-date">Sun 21</div><div class="day-body"><span class="tag tag-travel">Travel</span>Nozawa → Tokyo (~2.5–3 hr door-to-door). 9am Nozawa → ~12:30pm Tokyo. Daypacks only — bags forwarded Sat.</div></div>
         <div class="day"><div class="day-date">Mon 22</div><div class="day-body"><span class="tag tag-anchor">Anchor</span><strong>Dad's golf day</strong> — Ginza morning (Honma + Mizuno flagships), Kanda Ogawamachi afternoon (Victoria Golf + sports street browse).</div></div>
