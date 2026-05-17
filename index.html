@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Japan — February 2027</title>
+<style>
+  :root {
+    --bg: #0f0e0c;
+    --card: #1a1815;
+    --ink: #f4ede1;
+    --muted: #8a8275;
+    --accent: #d4a574;
+    --rust: #b85c3a;
+    --line: #2a2722;
+    --travel: #6b8e8e;
+    --anchor: #d4a574;
+    --free: #7a8a6f;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+    line-height: 1.55;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+  }
+  /* HERO */
+  .hero {
+    padding: 24px 0 40px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 32px;
+  }
+  .kicker {
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-family: "Times New Roman", Georgia, serif;
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 16px;
+  }
+  h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .sub {
+    color: var(--muted);
+    font-size: 15px;
+    max-width: 480px;
+  }
+  /* META STRIP */
+  .meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    margin-top: 28px;
+  }
+  .meta-cell {
+    padding: 14px;
+    background: var(--card);
+    border-radius: 8px;
+    border: 1px solid var(--line);
+  }
+  .meta-label {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .meta-value {
+    font-family: "Times New Roman", Georgia, serif;
+    font-size: 20px;
+    color: var(--ink);
+  }
+  /* SECTION */
+  section {
+    margin-bottom: 48px;
+  }
+  h2 {
+    font-family: "Times New Roman", Georgia, serif;
+    font-weight: 400;
+    font-size: 28px;
+    margin-bottom: 20px;
+    letter-spacing: -0.005em;
+  }
+  h3 {
+    font-family: "Times New Roman", Georgia, serif;
+    font-weight: 400;
+    font-size: 22px;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  /* GROUP */
+  .group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .person {
+    padding: 14px;
+    background: var(--card);
+    border-radius: 8px;
+    border: 1px solid var(--line);
+    text-align: center;
+  }
+  .person-name { font-size: 15px; margin-bottom: 2px; }
+  .person-note { font-size: 12px; color: var(--muted); }
+  /* LEGS */
+  .leg {
+    margin-bottom: 28px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .leg-head {
+    padding: 18px 20px;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .leg-num {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .leg-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .leg-dates {
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .leg-blurb {
+    padding: 16px 20px;
+    color: var(--muted);
+    font-size: 14px;
+    border-bottom: 1px solid var(--line);
+  }
+  .days {
+    padding: 8px 0;
+  }
+  .day {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 14px;
+    padding: 10px 20px;
+    align-items: baseline;
+  }
+  .day-date {
+    font-size: 12px;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .day-body {
+    font-size: 14px;
+  }
+  .tag {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-right: 8px;
+    vertical-align: 2px;
+  }
+  .tag-travel { background: rgba(107,142,142,0.18); color: var(--travel); }
+  .tag-anchor { background: rgba(212,165,116,0.18); color: var(--anchor); }
+  .tag-free   { background: rgba(122,138,111,0.18); color: var(--free); }
+  /* HIGHLIGHTS */
+  .highlights {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .highlight {
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--line);
+  }
+  .highlight:last-child { border-bottom: 0; }
+  .highlight-title { font-size: 15px; margin-bottom: 4px; }
+  .highlight-why { font-size: 13px; color: var(--muted); }
+  /* STATUS */
+  .status-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .status-col {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 16px;
+  }
+  .status-col h4 {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  .status-col li {
+    list-style: none;
+    font-size: 13px;
+    padding: 6px 0;
+    border-bottom: 1px dashed var(--line);
+  }
+  .status-col li:last-child { border-bottom: 0; }
+  /* LEGEND */
+  .legend {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 18px;
+  }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .legend-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    display: inline-block;
+  }
+  /* FOOTER */
+  footer {
+    margin-top: 60px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+  }
+  /* MOBILE */
+  @media (max-width: 540px) {
+    h1 { font-size: 34px; }
+    .meta, .group { grid-template-columns: 1fr 1fr; }
+    .status-grid { grid-template-columns: 1fr; }
+    .day { grid-template-columns: 56px 1fr; padding: 10px 16px; }
+    .leg-head, .leg-blurb { padding: 16px; }
+  }
+  /* PRINT */
+  @media print {
+    @page { size: A4; margin: 14mm; }
+    body { background: #fff; color: #1a1a1a; font-size: 11pt; }
+    .wrap { padding: 0; max-width: none; }
+    .hero { padding: 0 0 18pt; border-bottom: 1pt solid #ccc; margin-bottom: 18pt; }
+    h1 { font-size: 32pt; color: #1a1a1a; }
+    h1 em { color: #b85c3a; }
+    .kicker { color: #b85c3a; }
+    .sub { color: #555; }
+    section { margin-bottom: 24pt; }
+    h2 { font-size: 18pt; color: #1a1a1a; }
+    h3 { font-size: 14pt; color: #b85c3a; }
+    .meta-cell, .person, .leg, .highlights, .status-col {
+      background: #fff !important;
+      border: 1pt solid #ddd !important;
+      color: #1a1a1a !important;
+      page-break-inside: avoid;
+    }
+    .meta-label, .leg-num, .person-note, .day-date,
+    .leg-blurb, .highlight-why, .legend, footer { color: #666 !important; }
+    .meta-value { color: #1a1a1a !important; font-size: 16pt; }
+    .leg-head { border-bottom: 1pt solid #eee !important; }
+    .leg-blurb { border-bottom: 1pt solid #eee !important; }
+    .leg { margin-bottom: 12pt; }
+    .day { page-break-inside: avoid; padding: 6pt 14pt; }
+    .day-body { font-size: 10.5pt; }
+    .tag-travel { background: rgba(107,142,142,0.15) !important; color: #4a6a6a !important; }
+    .tag-anchor { background: rgba(212,165,116,0.22) !important; color: #8a5e2e !important; }
+    .tag-free   { background: rgba(122,138,111,0.18) !important; color: #4a5a3a !important; }
+    .highlight { border-bottom: 1pt dashed #ddd !important; }
+    .highlight:last-child { border-bottom: 0 !important; }
+    .status-col li { border-bottom: 1pt dashed #ddd !important; }
+    .status-col li:last-child { border-bottom: 0 !important; }
+    footer { border-top: 1pt solid #ccc !important; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="kicker">Family Trip · Dad's 70th</div>
+    <h1>Japan,<br><em>February 2027</em></h1>
+    <p class="sub">Three weeks across Tokyo, the mountains, Kyoto's old streets, and a snow week in Nozawa. Nine of us, three generations, one big birthday.</p>
+    <div class="meta">
+      <div class="meta-cell">
+        <div class="meta-label">Dates</div>
+        <div class="meta-value">2 — 25 Feb</div>
+      </div>
+      <div class="meta-cell">
+        <div class="meta-label">Nights</div>
+        <div class="meta-value">23</div>
+      </div>
+      <div class="meta-cell">
+        <div class="meta-label">Of us</div>
+        <div class="meta-value">9</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- GROUP -->
+  <section>
+    <h2>The crew</h2>
+    <div class="group">
+      <div class="person"><div class="person-name">Dad</div><div class="person-note">The 70-year-old</div></div>
+      <div class="person"><div class="person-name">Mum</div><div class="person-note"></div></div>
+      <div class="person"><div class="person-name">Gray</div><div class="person-note"></div></div>
+      <div class="person"><div class="person-name">Sophie</div><div class="person-note"></div></div>
+      <div class="person"><div class="person-name">Jess</div><div class="person-note"></div></div>
+      <div class="person"><div class="person-name">Ben</div><div class="person-note"></div></div>
+      <div class="person"><div class="person-name">Florence</div><div class="person-note">9</div></div>
+      <div class="person"><div class="person-name">Juniper</div><div class="person-note">6</div></div>
+      <div class="person"><div class="person-name">Goldie</div><div class="person-note">2</div></div>
+    </div>
+  </section>
+
+  <!-- ITINERARY -->
+  <section>
+    <h2>The shape of the trip</h2>
+
+    <!-- LEG 1: TOKYO ARRIVAL -->
+    <div class="leg">
+      <div class="leg-head">
+        <div class="leg-num">Leg 01 · 4 nights</div>
+        <div class="leg-title"><h3>Tokyo</h3><div class="leg-dates">Tue 2 — Sat 6 Feb</div></div>
+      </div>
+      <div class="leg-blurb">Land late, ease in. A buffer for jetlag, body clocks, and the toddler. Big-city anchor experiences before we head into the mountains.</div>
+      <div class="days">
+        <div class="day"><div class="day-date">Tue 2</div><div class="day-body"><span class="tag tag-travel">Travel</span>Brisbane → Tokyo Narita, lands <strong>17:30</strong>. Transfer to hotel (~90 min). Conbini / hotel dinner — likely settled by 21:00.</div></div>
+        <div class="day"><div class="day-date">Wed 3</div><div class="day-body"><span class="tag tag-anchor">Anchor</span>Morning: <strong>Kappabashi-dori</strong> kitchen town (knives, ceramics, plastic food samples). Afternoon: <strong>Setsubun at Sensō-ji</strong> — bean-throwing festival, oni costumes.</div></div>
+        <div class="day"><div class="day-date">Thu 4</div><div class="day-body"><span class="tag tag-anchor">Anchor</span>Morning: <strong>Tsukiji Outer Market</strong> — sashimi breakfast, market wander. Afternoon: <strong>Hama-rikyu Gardens</strong> + tea house on the pond island.</div></div>
+        <div class="day"><div class="day-date">Fri 5</div><div class="day-body"><span class="tag tag-anchor">Anchor</span><strong>Sumo morning practice</strong> (6:30am, adult split-cohort, Ryōgoku). Afternoon: depachika browse (Mitsukoshi / Isetan). Early night before Hakone.</div></div>
+      </div>
+    </div>
+
+    <!-- LEG 2: HAKONE -->
+    <div class="leg">
+      <div class="leg-head">
+        <div class="leg-num">Leg 02 · 2 nights</div>
+        <div class="leg-title"><h3>Hakone</h3><div class="leg-dates">Sat 6 — Mon 8 Feb</div></div>
+      </div>
+      <div class="leg-blurb">Onsen town. Mt Fuji views, volcanic valleys, and the slow-down day before Kyoto.</div>
+      <div class="days">
+        <div class="day"><div class="day-date">Sat 6</div><div class="day-body"><span class="tag tag-travel">Travel</span>Tokyo → Hakone on Odakyu Romancecar (~85 min). Lunch in Yumoto. Afternoon: <strong>Hakone Open-Air Museum</strong>. Check in to ryokan, onsen + kaiseki dinner.</div></div>
+        <div class="day"><div class="day-date">Sun 7</div><div class="day-body"><span class="tag tag-anchor">Anchor</span><strong>The Hakone Loop</strong> — Tozan switchback railway → cable car → ropeway over Owakudani (volcanic valley, black eggs) → pirate ship across Lake Ashi (Fuji views) → Hakone Shrine (torii in the water) → bus back.</div></div>
+      </div>
+    </div>
+
+    <!-- LEG 3: KYOTO -->
+    <div class="leg">
+      <div class="leg-head">
+        <div class="leg-num">Leg 03 · 8 nights</div>
+        <div class="leg-title"><h3>Kyoto</h3><div class="leg-dates">Mon 8 — Tue 16 Feb</div></div>
+      </div>
+      <div class="leg-blurb">The cultural heart and the depth leg. Eight nights to slow right down — temples, machiya streets, sake breweries, master craft. Wide day-trip range: Himeji, Nara, Fushimi sake, Yamazaki distillery, Osaka half-day, Kaiyukan aquarium.</div>
+      <div class="days">
+        <div class="day"><div class="day-date">Mon 8</div><div class="day-body"><span class="tag tag-travel">Travel</span>Hakone → Kyoto via shinkansen (~2 hr 15). Check in.</div></div>
+        <div class="day"><div class="day-date">Tue 9</div><div class="day-body"><span class="tag tag-anchor">Anchor</span><strong>Higashiyama / Gion day</strong> — Kiyomizu-dera, Sannenzaka/Ninenzaka, Yasaka Shrine, Gion wander. Optional free walking tour in the morning.</div></div>
+        <div class="day"><div class="day-date">Wed 10</div><div class="day-body"><span class="tag tag-anchor">Anchor</span><strong>Fushimi day</strong> — Inari shrine 1000 torii morning, Fushimi sake district afternoon (Gekkeikan museum + tasting, Kizakura).</div></div>
+        <div class="day"><div class="day-date">Thu 11</div><div class="day-body"><span class="tag tag-anchor">Anchor</span>Morning: <strong>Nara half-day</strong> — Tōdai-ji giant Buddha + deer park. Afternoon back in Kyoto.</div></div>
+        <div class="day"><div class="day-date">Fri 12</div><div class="day-body"><span class="tag tag-anchor">Anchor</span><strong>Himeji Castle day trip</strong> (~50 min shinkansen). Keep climb + Koko-en gardens. Split-cohort if Goldie skips the keep.</div></div>
+        <div class="day"><div class="day-date">Sat 13</div><div class="day-body"><span class="tag tag-anchor">Anchor</span><strong>Kids day</strong> — Toei Kyoto Studio Park (samurai film set, ninja shows, costume dress-up) + Kyoto Railway Museum.</div></div>
+        <div class="day"><div class="day-date">Sun 14</div><div class="day-body"><span class="tag tag-anchor">Anchor</span>Yamazaki + Kaiyukan day — split cohort, adults distillery / kids aquarium.</div></div>
+        <div class="day"><div class="day-date">Mon 15</div><div class="day-body"><span class="tag tag-free">Free</span>Morning: <strong>forward bags to Nozawa via Yamato Takkyubin</strong> (arrives Tue). Afternoon: free / last Kyoto wander.</div></div>
+      </div>
+    </div>
+
+    <!-- LEG 4: NOZAWA -->
+    <div class="leg">
+      <div class="leg-head">
+        <div class="leg-num">Leg 04 · 5 nights — LOCKED</div>
+        <div class="leg-title"><h3>Nozawa Onsen</h3><div class="leg-dates">Tue 16 — Sun 21 Feb</div></div>
+      </div>
+      <div class="leg-blurb">The snow week. Skiing for those who want it, 13 free public bathhouses, and Sparena for the lower-pressure mixed-bathing option. Nozawa Dream Central is the target accommodation.</div>
+      <div class="days">
+        <div class="day"><div class="day-date">Tue 16</div><div class="day-body"><span class="tag tag-travel">Travel</span>Kyoto → Tokyo → Iiyama → Nozawa (~5 hr door-to-door). Daypacks only — bags arrive separately. <strong>9am Kyoto → ~2:30pm Nozawa.</strong> Check in, onsen, settle.</div></div>
+        <div class="day"><div class="day-date">Wed 17</div><div class="day-body"><span class="tag tag-anchor">Anchor</span><strong>Ski day 1.</strong> Girls in lessons. Non-skiers: village + Sparena + Sakaya Honten sake.</div></div>
+        <div class="day"><div class="day-date">Thu 18</div><div class="day-body"><span class="tag tag-anchor">Anchor</span><strong>Ski day 2.</strong> Non-skiers optional <strong>Nagano + Obuse</strong> day-trip (Zenkō-ji, Hokusai Museum, Masuichi-Ichimura sake).</div></div>
+        <div class="day"><div class="day-date">Fri 19</div><div class="day-body"><span class="tag tag-anchor">Anchor</span><strong>Ski day 3.</strong> Non-skiers: village + onsen + relaxed pace.</div></div>
+        <div class="day"><div class="day-date">Sat 20</div><div class="day-body"><span class="tag tag-free">Free</span><strong>Chill day.</strong> Onsen, Sparena, slow village wander, pack. Everyone wind-down.</div></div>
+      </div>
+    </div>
+
+    <!-- LEG 6: TOKYO RETURN -->
+    <div class="leg">
+      <div class="leg-head">
+        <div class="leg-num">Leg 05 · 4 nights</div>
+        <div class="leg-title"><h3>Tokyo</h3><div class="leg-dates">Sun 21 — Thu 25 Feb</div></div>
+      </div>
+      <div class="leg-blurb">Back to the city for the wind-down. The sushi-counter dinner. The last surprise. The slow re-pack.</div>
+      <div class="days">
+        <div class="day"><div class="day-date">Sun 21</div><div class="day-body"><span class="tag tag-travel">Travel</span>Nozawa → Tokyo (~2.5–3 hr door-to-door). 9am Nozawa → ~12:30pm Tokyo. Daypacks only — bags forwarded Sat.</div></div>
+        <div class="day"><div class="day-date">Mon 22</div><div class="day-body"><span class="tag tag-anchor">Anchor</span><strong>Dad's golf day</strong> — Ginza morning (Honma + Mizuno flagships), Kanda Ogawamachi afternoon (Victoria Golf + sports street browse).</div></div>
+        <div class="day"><div class="day-date">Tue 23</div><div class="day-body"><span class="tag tag-anchor">Anchor</span>Morning: <strong>Ghibli Museum</strong> (Mitaka — book tickets 10am JST on 10 Jan 2027). Evening: <strong>Dad's birthday dinner</strong> — sushi counter.</div></div>
+        <div class="day"><div class="day-date">Wed 24</div><div class="day-body"><span class="tag tag-anchor">Anchor</span><strong>teamLab Planets</strong> (Toyosu — barefoot water immersive) + <strong>Small Worlds Tokyo</strong> (Ariake — model city park, get inserted as figurines).</div></div>
+      </div>
+    </div>
+
+    <div class="legend">
+      <span><span class="legend-dot" style="background: var(--travel);"></span>Travel day</span>
+      <span><span class="legend-dot" style="background: var(--anchor);"></span>Anchor day</span>
+      <span><span class="legend-dot" style="background: var(--free);"></span>Free day</span>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS / DAD-CODED -->
+  <section>
+    <h2>For Dad<br><span style="font-size:14px;color:var(--muted);font-family:inherit;font-style:italic;">the headline experiences, open for discussion</span></h2>
+    <div class="highlights">
+      <div class="highlight">
+        <div class="highlight-title">Setsubun at Sensō-ji — Wed 3 Feb</div>
+        <div class="highlight-why">Bean-throwing festival to drive out demons. Falls on day 2 — the calendar gift of the trip.</div>
+      </div>
+      <div class="highlight">
+        <div class="highlight-title">Suntory Yamazaki Distillery tour + tasting flight</div>
+        <div class="highlight-why">Master whisky craft. 12 min from Kyoto on the JR line. Books out months ahead.</div>
+      </div>
+      <div class="highlight">
+        <div class="highlight-title">An omakase sushi counter on his birthday</div>
+        <div class="highlight-why">Tokyo, second leg. Chair reserved just for him.</div>
+      </div>
+      <div class="highlight">
+        <div class="highlight-title">Fushimi sake brewery walk</div>
+        <div class="highlight-why">Kyoto's southern sake district. Tasting flight, history, Gekkeikan museum.</div>
+      </div>
+      <div class="highlight">
+        <div class="highlight-title">Private history walk in Kyoto</div>
+        <div class="highlight-why">Knowledgeable guide, deep cuts, things you only get with someone who knows.</div>
+      </div>
+      <div class="highlight">
+        <div class="highlight-title">Engineering / how-stuff-works visit</div>
+        <div class="highlight-why">Railway Museum, Miraikan, or a factory tour — to be slotted.</div>
+      </div>
+      <div class="highlight">
+        <div class="highlight-title">Tsukiji dawn food walk</div>
+        <div class="highlight-why">Sashimi for breakfast, market culture, ideally with a chef-led group.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATUS -->
+  <section>
+    <h2>Where we're at</h2>
+    <div class="status-grid">
+      <div class="status-col">
+        <h4>Locked in</h4>
+        <ul>
+          <li>Flights (Brisbane → Narita, 2 Feb 17:30)</li>
+          <li>Nozawa dates (16–21 Feb)</li>
+          <li>5-leg itinerary shape</li>
+          <li>Osaka cut — Yamazaki, Kaiyukan, Castle as Kyoto day-trips</li>
+        </ul>
+      </div>
+      <div class="status-col">
+        <h4>Open threads</h4>
+        <ul>
+          <li>Nozawa Dream Central — confirm dates + breakfast</li>
+          <li>Accommodation per leg (9 of us)</li>
+          <li>Activity bookings (Yamazaki, sushi, etc.)</li>
+          <li>Share with the family group</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Drafted in Claude Code · Living document · Last updated 17 May 2026
+  </footer>
+
+</div>
+</body>
+</html>
