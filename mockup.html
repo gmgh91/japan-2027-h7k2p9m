@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>JAPAN — February 2027</title>
+<style>
+  :root {
+    --bg: #f6efe3;
+    --ink: #2c2520;
+    --muted: #6f6a60;
+    --line: #d8cfbf;
+    --rust: #b85c3a;
+    --gold: #d4a574;
+    --teal: #3a6266;
+    --tag-travel: #6b8e8e;
+    --tag-anchor: #b85c3a;
+    --tag-free: #7a8a6f;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Times New Roman", Georgia, serif;
+    font-size: 18px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    padding: 80px 0 56px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 0;
+  }
+  .kicker {
+    font-family: -apple-system, "Inter", "Helvetica Neue", sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--rust);
+    font-weight: 600;
+    margin-bottom: 28px;
+  }
+  h1.display {
+    font-family: "Times New Roman", Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(72px, 18vw, 200px);
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    margin-bottom: 28px;
+  }
+  h1.display em {
+    font-style: italic;
+    color: var(--rust);
+  }
+  .hero-sub {
+    font-family: -apple-system, "Inter", sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+    margin-bottom: 40px;
+  }
+  .hero-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+    padding: 32px 0;
+    border-top: 1px solid var(--line);
+  }
+  .meta-cell { display: flex; flex-direction: column; gap: 4px; }
+  .meta-label {
+    font-family: -apple-system, "Inter", sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .meta-value {
+    font-family: "Times New Roman", Georgia, serif;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+  .meta-value em { color: var(--rust); font-style: italic; }
+
+  /* ---------- SECTION HEADERS ---------- */
+  .section-label {
+    font-family: -apple-system, "Inter", sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--rust);
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  h2.section-title {
+    font-family: "Times New Roman", Georgia, serif;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 1;
+    letter-spacing: -0.015em;
+    margin-bottom: 40px;
+  }
+  h2.section-title em { font-style: italic; color: var(--rust); }
+
+  /* ---------- CREW ---------- */
+  section.crew { padding: 80px 0; border-bottom: 1px solid var(--line); }
+  .crew-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .person {
+    background: var(--bg);
+    padding: 28px 20px;
+    text-align: center;
+  }
+  .person-name {
+    font-family: "Times New Roman", Georgia, serif;
+    font-size: 26px;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    margin-bottom: 6px;
+  }
+  .person-role {
+    font-family: -apple-system, "Inter", sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .person.kid .person-name { color: var(--rust); }
+
+  /* ---------- JOURNEY OVERVIEW ---------- */
+  section.journey { padding: 80px 0; border-bottom: 1px solid var(--line); }
+  .timeline {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+  }
+  .timeline-leg {
+    padding: 20px 16px;
+    border: 1px solid var(--line);
+    background: rgba(255,255,255,0.4);
+    text-decoration: none;
+    color: var(--ink);
+    transition: background 0.2s;
+  }
+  .timeline-leg:hover { background: rgba(255,255,255,0.7); }
+  .timeline-num {
+    font-family: "Times New Roman", Georgia, serif;
+    font-size: 32px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--rust);
+    margin-bottom: 12px;
+  }
+  .timeline-place {
+    font-family: -apple-system, "Inter", sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .timeline-dates {
+    font-family: -apple-system, "Inter", sans-serif;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+  .timeline-nights {
+    font-family: -apple-system, "Inter", sans-serif;
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+
+  /* ---------- LEG ---------- */
+  section.leg-mega {
+    padding: 100px 0 80px;
+    border-bottom: 1px solid var(--line);
+  }
+  section.leg-mega:last-of-type { border-bottom: 0; }
+  .leg-hero {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    align-items: end;
+    margin-bottom: 56px;
+  }
+  .leg-number {
+    font-family: "Times New Roman", Georgia, serif;
+    font-size: clamp(120px, 18vw, 220px);
+    line-height: 0.8;
+    letter-spacing: -0.05em;
+    color: var(--rust);
+    font-style: italic;
+  }
+  .leg-title-block .leg-place {
+    font-family: "Times New Roman", Georgia, serif;
+    font-size: clamp(48px, 8vw, 88px);
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+  }
+  .leg-meta-row {
+    font-family: -apple-system, "Inter", sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .leg-meta-row span { color: var(--rust); }
+  .leg-desc {
+    font-size: 22px;
+    line-height: 1.5;
+    max-width: 640px;
+    margin-bottom: 56px;
+    font-style: italic;
+    color: var(--ink);
+  }
+  .leg-desc::before {
+    content: "❝ ";
+    color: var(--gold);
+    font-style: normal;
+  }
+
+  /* ---------- ACCOM CARD ---------- */
+  .card {
+    border: 1px solid var(--line);
+    padding: 24px 28px;
+    background: rgba(255,255,255,0.4);
+    margin-bottom: 40px;
+  }
+  .card-label {
+    font-family: -apple-system, "Inter", sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+  .card-item {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--ink);
+    padding: 6px 0;
+  }
+  .card-item strong { font-weight: 600; }
+  .card-item.backup {
+    font-size: 14px;
+    color: var(--muted);
+    padding-top: 8px;
+  }
+  .card-link {
+    color: var(--rust);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--rust);
+    white-space: nowrap;
+    font-family: -apple-system, "Inter", sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+  }
+  .card-status {
+    display: inline-block;
+    font-family: -apple-system, "Inter", sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 0;
+    background: rgba(58,98,102,0.12);
+    color: var(--teal);
+    font-weight: 600;
+    margin-left: 8px;
+    vertical-align: 2px;
+  }
+
+  /* ---------- DAY CARDS ---------- */
+  .days-stack {
+    display: grid;
+    gap: 18px;
+    margin-bottom: 40px;
+  }
+  .day-card {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 24px;
+    padding: 28px 0;
+    border-top: 1px solid var(--line);
+  }
+  .day-card:last-child { border-bottom: 1px solid var(--line); }
+  .day-date {
+    font-family: "Times New Roman", Georgia, serif;
+    font-size: 36px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .day-date small {
+    display: block;
+    font-family: -apple-system, "Inter", sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 6px;
+    font-weight: 500;
+  }
+  .day-body { padding-top: 4px; }
+  .day-tag {
+    display: inline-block;
+    font-family: -apple-system, "Inter", sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  .tag-anchor { background: rgba(184,92,58,0.15); color: var(--tag-anchor); }
+  .tag-travel { background: rgba(107,142,142,0.18); color: var(--tag-travel); }
+  .tag-free   { background: rgba(122,138,111,0.18); color: var(--tag-free); }
+  .day-title {
+    font-family: "Times New Roman", Georgia, serif;
+    font-size: 26px;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+    font-weight: 400;
+  }
+  .day-desc {
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink);
+  }
+
+  /* ---------- BONUS ---------- */
+  .bonus-card {
+    background: rgba(212,165,116,0.08);
+    border: 1px solid rgba(212,165,116,0.4);
+    padding: 28px 32px;
+    margin-top: 16px;
+  }
+  .bonus-label {
+    font-family: -apple-system, "Inter", sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--rust);
+    font-weight: 600;
+    margin-bottom: 18px;
+  }
+  .bonus-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 24px;
+  }
+  .bonus-item-v2 {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .bonus-item-v2 strong { font-weight: 600; }
+  .bonus-cat {
+    display: inline-block;
+    font-family: -apple-system, "Inter", sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+    margin-right: 6px;
+  }
+
+  /* ---------- STATUS ---------- */
+  section.status-section { padding: 80px 0; border-bottom: 1px solid var(--line); }
+  .status-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .status-col h3 {
+    font-family: -apple-system, "Inter", sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--rust);
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .status-col li {
+    list-style: none;
+    font-size: 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .status-col li:last-child { border-bottom: 0; }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    padding: 60px 0 80px;
+    text-align: center;
+    color: var(--muted);
+    font-family: -apple-system, "Inter", sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  /* ---------- LEG ACCENTS ---------- */
+  section.leg-hakone { background: linear-gradient(180deg, rgba(58,98,102,0.04), transparent); }
+  section.leg-kyoto  { background: linear-gradient(180deg, rgba(184,92,58,0.05), transparent); }
+  section.leg-nozawa { background: linear-gradient(180deg, rgba(125,150,170,0.08), transparent); }
+
+  /* ---------- MOBILE ---------- */
+  @media (max-width: 760px) {
+    body { font-size: 16px; }
+    .wrap { padding: 0 18px; }
+    .hero { padding: 56px 0 36px; }
+    .hero-meta { grid-template-columns: 1fr 1fr; }
+    h1.display { font-size: 96px; }
+    h2.section-title { font-size: 36px; }
+    .crew-grid { grid-template-columns: 1fr 1fr; }
+    .timeline { grid-template-columns: 1fr 1fr; }
+    .leg-hero { grid-template-columns: 1fr; gap: 16px; align-items: start; }
+    .leg-number { font-size: 96px; }
+    .leg-title-block .leg-place { font-size: 48px; }
+    .leg-desc { font-size: 18px; }
+    .day-card { grid-template-columns: 80px 1fr; gap: 16px; padding: 22px 0; }
+    .day-date { font-size: 26px; }
+    .day-title { font-size: 20px; }
+    .bonus-grid { grid-template-columns: 1fr; }
+    .status-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ---------- PRINT ---------- */
+  @media print {
+    @page { size: A4; margin: 12mm; }
+    body { background: #fff; font-size: 11pt; }
+    .wrap { padding: 0; max-width: none; }
+    .hero { padding: 0 0 24pt; }
+    h1.display { font-size: 80pt; }
+    section { padding: 24pt 0; page-break-inside: avoid; }
+    section.leg-mega { padding: 30pt 0; }
+    .leg-number { font-size: 80pt; }
+    .leg-title-block .leg-place { font-size: 36pt; }
+    .day-card { page-break-inside: avoid; padding: 12pt 0; }
+    .card, .bonus-card { page-break-inside: avoid; }
+    section.leg-hakone, section.leg-kyoto, section.leg-nozawa { background: #fff !important; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="kicker">Family Trip · Dad's 70th</div>
+    <h1 class="display">Japan,<br><em>2027</em></h1>
+    <div class="hero-sub">Tokyo · Hakone · Kyoto · Nozawa · Tokyo</div>
+    <div class="hero-meta">
+      <div class="meta-cell">
+        <div class="meta-label">Dates</div>
+        <div class="meta-value">Feb 2 — 25</div>
+      </div>
+      <div class="meta-cell">
+        <div class="meta-label">Nights</div>
+        <div class="meta-value"><em>23</em></div>
+      </div>
+      <div class="meta-cell">
+        <div class="meta-label">Of us</div>
+        <div class="meta-value"><em>9</em></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- CREW -->
+  <section class="crew">
+    <div class="section-label">Three Generations</div>
+    <h2 class="section-title">The <em>crew</em></h2>
+    <div class="crew-grid">
+      <div class="person"><div class="person-name">Dad</div><div class="person-role">The 70-year-old</div></div>
+      <div class="person"><div class="person-name">Mum</div><div class="person-role">First-timer</div></div>
+      <div class="person"><div class="person-name">Gray</div><div class="person-role">Trip planner</div></div>
+      <div class="person"><div class="person-name">Sophie</div><div class="person-role">Gray's partner</div></div>
+      <div class="person"><div class="person-name">Jess</div><div class="person-role">Sister</div></div>
+      <div class="person"><div class="person-name">Ben</div><div class="person-role">Jess's husband</div></div>
+      <div class="person kid"><div class="person-name">Florence</div><div class="person-role">9 years old</div></div>
+      <div class="person kid"><div class="person-name">Juniper</div><div class="person-role">6 years old</div></div>
+      <div class="person kid"><div class="person-name">Goldie</div><div class="person-role">2 years old</div></div>
+    </div>
+  </section>
+
+  <!-- JOURNEY OVERVIEW -->
+  <section class="journey">
+    <div class="section-label">Five Legs</div>
+    <h2 class="section-title">The <em>journey</em></h2>
+    <div class="timeline">
+      <a class="timeline-leg" href="#leg-01">
+        <div class="timeline-num">01</div>
+        <div class="timeline-place">Tokyo</div>
+        <div class="timeline-dates">Feb 2 — 6</div>
+        <div class="timeline-nights">4 nights</div>
+      </a>
+      <a class="timeline-leg" href="#leg-02">
+        <div class="timeline-num">02</div>
+        <div class="timeline-place">Hakone</div>
+        <div class="timeline-dates">Feb 6 — 8</div>
+        <div class="timeline-nights">2 nights</div>
+      </a>
+      <a class="timeline-leg" href="#leg-03">
+        <div class="timeline-num">03</div>
+        <div class="timeline-place">Kyoto</div>
+        <div class="timeline-dates">Feb 8 — 16</div>
+        <div class="timeline-nights">8 nights</div>
+      </a>
+      <a class="timeline-leg" href="#leg-04">
+        <div class="timeline-num">04</div>
+        <div class="timeline-place">Nozawa</div>
+        <div class="timeline-dates">Feb 16 — 21</div>
+        <div class="timeline-nights">5 nights · locked</div>
+      </a>
+      <a class="timeline-leg" href="#leg-05">
+        <div class="timeline-num">05</div>
+        <div class="timeline-place">Tokyo</div>
+        <div class="timeline-dates">Feb 21 — 25</div>
+        <div class="timeline-nights">4 nights</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- LEG 01: TOKYO ARRIVAL -->
+  <section class="leg-mega leg-tokyo" id="leg-01">
+    <div class="leg-hero">
+      <div class="leg-number">01</div>
+      <div class="leg-title-block">
+        <div class="leg-place">Tokyo</div>
+        <div class="leg-meta-row">Feb 2 — 6 / <span>4 nights</span> / Arrival</div>
+      </div>
+    </div>
+    <p class="leg-desc">Land late, ease in. A buffer for jetlag, body clocks, and the toddler. Big-city anchor experiences before we head into the mountains.</p>
+
+    <div class="card">
+      <div class="card-label">Where we could stay</div>
+      <div class="card-item"><strong>MIMARU Tokyo Asakusa Station</strong> — apt-hotel, family suites with full kitchens, lift access. 3 min walk to Asakusa Station. <a class="card-link" href="https://mimaruhotels.com/en/hotel/asakusa-station/" target="_blank">Property →</a><span class="card-status">TBC</span></div>
+    </div>
+
+    <div class="days-stack">
+      <article class="day-card">
+        <div class="day-date">2<small>Tue Feb</small></div>
+        <div class="day-body">
+          <span class="day-tag tag-travel">Travel</span>
+          <h3 class="day-title">Brisbane → Tokyo Narita</h3>
+          <p class="day-desc">Lands 17:30. Transfer to hotel (~90 min). Conbini / hotel dinner — likely settled by 21:00.</p>
+        </div>
+      </article>
+      <article class="day-card">
+        <div class="day-date">3<small>Wed Feb</small></div>
+        <div class="day-body">
+          <span class="day-tag tag-anchor">Anchor</span>
+          <h3 class="day-title">Kappabashi-dori + Setsubun</h3>
+          <p class="day-desc">Morning: Kappabashi-dori kitchen town (knives, ceramics, plastic food samples). Afternoon: Setsubun at Sensō-ji — bean-throwing festival, oni costumes.</p>
+        </div>
+      </article>
+      <article class="day-card">
+        <div class="day-date">4<small>Thu Feb</small></div>
+        <div class="day-body">
+          <span class="day-tag tag-anchor">Anchor</span>
+          <h3 class="day-title">Tsukiji + Hama-rikyu</h3>
+          <p class="day-desc">Morning: Tsukiji Outer Market — sashimi breakfast, market wander. Afternoon: Hama-rikyu Gardens + tea house on the pond island.</p>
+        </div>
+      </article>
+      <article class="day-card">
+        <div class="day-date">5<small>Fri Feb</small></div>
+        <div class="day-body">
+          <span class="day-tag tag-anchor">Anchor</span>
+          <h3 class="day-title">Sumo morning practice + depachika</h3>
+          <p class="day-desc">6:30am sumo morning practice (adult split-cohort, Ryōgoku). Afternoon: depachika browse (Mitsukoshi / Isetan). Early night before Hakone.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="bonus-card">
+      <div class="bonus-label">If you've got time</div>
+      <div class="bonus-grid">
+        <div class="bonus-item-v2"><span class="bonus-cat">Stationery</span><strong>Itoya Ginza</strong> — 13 floors of pens, washi, art supplies.</div>
+        <div class="bonus-item-v2"><span class="bonus-cat">Kids</span><strong>Pokemon Cafe + Center DX (Nihonbashi)</strong> — cafe needs ~1 month advance booking.</div>
+        <div class="bonus-item-v2"><span class="bonus-cat">Chaos</span><strong>Don Quijote (Akihabara/Shibuya)</strong> — multi-floor discount megastore, tax-free.</div>
+        <div class="bonus-item-v2"><span class="bonus-cat">Architecture</span><strong>Sumida Hokusai Museum</strong> — Sejima building + Hokusai. Pairs with Tsukiji.</div>
+        <div class="bonus-item-v2"><span class="bonus-cat">Whisky</span><strong>Bar Zoetrope (Shinjuku)</strong> — 300+ Japanese whiskies.</div>
+        <div class="bonus-item-v2"><span class="bonus-cat">Nightlife</span><strong>Golden Gai (Shinjuku)</strong> — tiny 4–8 seat bars.</div>
+        <div class="bonus-item-v2"><span class="bonus-cat">Hands-on</span><strong>Buaisou indigo workshop (Kuramae)</strong> — aizome dyeing, take a tote home.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEG 02: HAKONE -->
+  <section class="leg-mega leg-hakone" id="leg-02">
+    <div class="leg-hero">
+      <div class="leg-number">02</div>
+      <div class="leg-title-block">
+        <div class="leg-place">Hakone</div>
+        <div class="leg-meta-row">Feb 6 — 8 / <span>2 nights</span> / Onsen</div>
+      </div>
+    </div>
+    <p class="leg-desc">Onsen town. Mt Fuji views, volcanic valleys, and the slow-down day before Kyoto.</p>
+
+    <div class="card">
+      <div class="card-label">Where we could stay</div>
+      <div class="card-item"><strong>Hakone Ashinoko Hanaori</strong> — modern lakeside ryokan with private bookable onsens (tattoo-safe), Western-Japanese hybrid rooms (beds + chairs), lift access, family suites. <a class="card-link" href="https://ashinoko-hanaori.hakonehotelspage.com/en/" target="_blank">Property →</a><span class="card-status">TBC</span></div>
+    </div>
+
+    <div class="days-stack">
+      <article class="day-card">
+        <div class="day-date">6<small>Sat Feb</small></div>
+        <div class="day-body">
+          <span class="day-tag tag-travel">Travel</span>
+          <h3 class="day-title">Tokyo → Hakone + Open-Air Museum</h3>
+          <p class="day-desc">Odakyu Romancecar from Shinjuku (~85 min). Lunch in Yumoto. Afternoon: Hakone Open-Air Museum. Check in, onsen + kaiseki dinner.</p>
+        </div>
+      </article>
+      <article class="day-card">
+        <div class="day-date">7<small>Sun Feb</small></div>
+        <div class="day-body">
+          <span class="day-tag tag-anchor">Anchor</span>
+          <h3 class="day-title">The Hakone Loop</h3>
+          <p class="day-desc">Tozan switchback railway → cable car → ropeway over Owakudani (volcanic valley, black eggs) → pirate ship across Lake Ashi (Fuji views) → Hakone Shrine (torii in the water) → bus back.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="bonus-card">
+      <div class="bonus-label">If you've got time</div>
+      <div class="bonus-grid">
+        <div class="bonus-item-v2"><span class="bonus-cat">Art</span><strong>Pola Museum of Art</strong> — Impressionists in a forest setting, walkable from the ropeway.</div>
+        <div class="bonus-item-v2"><span class="bonus-cat">Photogenic</span><strong>Hakone Glass Forest</strong> — Venetian glass museum, kid-friendly.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEG 03: KYOTO -->
+  <section class="leg-mega leg-kyoto" id="leg-03">
+    <div class="leg-hero">
+      <div class="leg-number">03</div>
+      <div class="leg-title-block">
+        <div class="leg-place">Kyoto</div>
+        <div class="leg-meta-row">Feb 8 — 16 / <span>8 nights</span> / Depth</div>
+      </div>
+    </div>
+    <p class="leg-desc">The cultural heart and the depth leg. Eight nights to slow right down — temples, machiya streets, sake breweries, master craft. Day-trip range covers Himeji, Nara, Fushimi, Yamazaki, Osaka, Kaiyukan.</p>
+
+    <div class="card">
+      <div class="card-label">Where we could stay</div>
+      <div class="card-item"><strong>Ruikou Machiya</strong> (Machiya Residence Inn) — 4-bedroom heritage machiya, 184m², two buildings around a garden. Western beds for Mum + Dad in the detached hanare. Two kitchens. <a class="card-link" href="https://www.kyoto-machiya-inn.com/accommodations/ruikou/" target="_blank">Property →</a><span class="card-status">Enquiry in</span></div>
+      <div class="card-item backup">Backup 1: <strong>Miyagawacho Samurai Machiya</strong> (Gion-adjacent, 4–5 BR, multiple Western beds). <a class="card-link" href="https://mykyotomachiya.com/miyagawacho-machiya/" target="_blank">Property →</a></div>
+      <div class="card-item backup">Backup 2: <strong>Tofukuji Samurai Machiya</strong> (5 BR / sleeps 9, 2 Western beds, bookable now). <a class="card-link" href="https://www.booking.com/hotel/jp/dong-fu-si-samuraiting-jia-tofukuji-samurai-machiya.html" target="_blank">Property →</a></div>
+    </div>
+
+    <div class="days-stack">
+      <article class="day-card">
+        <div class="day-date">8<small>Mon Feb</small></div>
+        <div class="day-body">
+          <span class="day-tag tag-travel">Travel</span>
+          <h3 class="day-title">Hakone → Kyoto</h3>
+          <p class="day-desc">Shinkansen from Odawara (~2 hr 15). Check in.</p>
+        </div>
+      </article>
+      <article class="day-card">
+        <div class="day-date">9<small>Tue Feb</small></div>
+        <div class="day-body">
+          <span class="day-tag tag-anchor">Anchor</span>
+          <h3 class="day-title">Higashiyama + Gion</h3>
+          <p class="day-desc">Kiyomizu-dera, Sannenzaka/Ninenzaka, Yasaka Shrine, Gion wander. Optional free walking tour in the morning.</p>
+        </div>
+      </article>
+      <article class="day-card">
+        <div class="day-date">10<small>Wed Feb</small></div>
+        <div class="day-body">
+          <span class="day-tag tag-anchor">Anchor</span>
+          <h3 class="day-title">Fushimi day</h3>
+          <p class="day-desc">Fushimi Inari shrine 1000 torii morning. Fushimi sake district afternoon (Gekkeikan museum + tasting, Kizakura).</p>
+        </div>
+      </article>
+      <article class="day-card">
+        <div class="day-date">11<small>Thu Feb</small></div>
+        <div class="day-body">
+          <span class="day-tag tag-anchor">Anchor</span>
+          <h3 class="day-title">Nara half-day</h3>
+          <p class="day-desc">Morning: Tōdai-ji giant Buddha + deer park. Afternoon back in Kyoto.</p>
+        </div>
+      </article>
+      <article class="day-card">
+        <div class="day-date">12<small>Fri Feb</small></div>
+        <div class="day-body">
+          <span class="day-tag tag-anchor">Anchor</span>
+          <h3 class="day-title">Himeji Castle day trip</h3>
+          <p class="day-desc">~50 min shinkansen. Keep climb + Koko-en gardens. Split-cohort if Goldie skips the keep.</p>
+        </div>
+      </article>
+      <article class="day-card">
+        <div class="day-date">13<small>Sat Feb</small></div>
+        <div class="day-body">
+          <span class="day-tag tag-anchor">Anchor</span>
+          <h3 class="day-title">Kids day</h3>
+          <p class="day-desc">Toei Kyoto Studio Park (samurai film set, ninja shows, costume dress-up) + Kyoto Railway Museum.</p>
+        </div>
+      </article>
+      <article class="day-card">
+        <div class="day-date">14<small>Sun Feb</small></div>
+        <div class="day-body">
+          <span class="day-tag tag-anchor">Anchor</span>
+          <h3 class="day-title">Yamazaki + Kaiyukan</h3>
+          <p class="day-desc">Split cohort — adults at the distillery / kids at the aquarium. Reunite for dinner.</p>
+        </div>
+      </article>
+      <article class="day-card">
+        <div class="day-date">15<small>Mon Feb</small></div>
+        <div class="day-body">
+          <span class="day-tag tag-free">Free</span>
+          <h3 class="day-title">Forward bags + last Kyoto wander</h3>
+          <p class="day-desc">Morning: forward bags to Nozawa via Yamato Takkyubin (arrives Tue). Afternoon: free / last Kyoto wander.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="bonus-card">
+      <div class="bonus-label">If you've got time</div>
+      <div class="bonus-grid">
+        <div class="bonus-item-v2"><span class="bonus-cat">Food</span><strong>Nishiki Market</strong> — "Kyoto's kitchen," snack as you walk.</div>
+        <div class="bonus-item-v2"><span class="bonus-cat">Nightlife</span><strong>Pontocho alley</strong> — narrow lantern-lit restaurants/bars after dark.</div>
+        <div class="bonus-item-v2"><span class="bonus-cat">Food</span><strong>Kichi Kichi omurice</strong> — theatrical YouTube-famous chef. Book ahead.</div>
+        <div class="bonus-item-v2"><span class="bonus-cat">Calendar gift</span><strong>Plum blossom, Kitano Tenmangu</strong> — ~1,500 plums in peak Feb bloom.</div>
+        <div class="bonus-item-v2"><span class="bonus-cat">Culture</span><strong>Tea ceremony with a master</strong> — ~90 min sit-down (Camellia / En / Hozan-ji).</div>
+        <div class="bonus-item-v2"><span class="bonus-cat">Kimono</span><strong>Kimono dress-up in Gion</strong> — get photographed in old Kyoto streets.</div>
+        <div class="bonus-item-v2"><span class="bonus-cat">Bamboo</span><strong>Arashiyama half-day</strong> — bamboo grove + Tenryū-ji. Skip the monkey park.</div>
+        <div class="bonus-item-v2"><span class="bonus-cat">Temple</span><strong>Saiho-ji Moss Temple</strong> — advance postal reservation, sutra meditation.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEG 04: NOZAWA -->
+  <section class="leg-mega leg-nozawa" id="leg-04">
+    <div class="leg-hero">
+      <div class="leg-number">04</div>
+      <div class="leg-title-block">
+        <div class="leg-place">Nozawa</div>
+        <div class="leg-meta-row">Feb 16 — 21 / <span>5 nights</span> / Snow · Locked</div>
+      </div>
+    </div>
+    <p class="leg-desc">The snow week. Skiing for those who want it, 13 free public bathhouses, Sparena for the lower-pressure mixed-bathing option.</p>
+
+    <div class="card">
+      <div class="card-label">Where we could stay</div>
+      <div class="card-item"><strong>Nozawa Dream Central</strong> — chalet-style accommodation in the village, walking distance to lifts and public baths. <a class="card-link" href="https://www.nozawadream.com/" target="_blank">Property →</a><span class="card-status">Enquiry pending</span></div>
+    </div>
+
+    <div class="days-stack">
+      <article class="day-card">
+        <div class="day-date">16<small>Tue Feb</small></div>
+        <div class="day-body">
+          <span class="day-tag tag-travel">Travel</span>
+          <h3 class="day-title">Kyoto → Tokyo → Iiyama → Nozawa</h3>
+          <p class="day-desc">~5 hr door-to-door. Daypacks only — bags arrive separately. 9am Kyoto → ~2:30pm Nozawa. Check in, onsen, settle.</p>
+        </div>
+      </article>
+      <article class="day-card">
+        <div class="day-date">17<small>Wed Feb</small></div>
+        <div class="day-body">
+          <span class="day-tag tag-anchor">Anchor</span>
+          <h3 class="day-title">Ski day 1</h3>
+          <p class="day-desc">Girls in lessons. Non-skiers: village + Sparena + Sakaya Honten sake.</p>
+        </div>
+      </article>
+      <article class="day-card">
+        <div class="day-date">18<small>Thu Feb</small></div>
+        <div class="day-body">
+          <span class="day-tag tag-anchor">Anchor</span>
+          <h3 class="day-title">Ski day 2</h3>
+          <p class="day-desc">Non-skiers optional Nagano + Obuse day-trip (Zenkō-ji, Hokusai Museum, Masuichi-Ichimura sake).</p>
+        </div>
+      </article>
+      <article class="day-card">
+        <div class="day-date">19<small>Fri Feb</small></div>
+        <div class="day-body">
+          <span class="day-tag tag-anchor">Anchor</span>
+          <h3 class="day-title">Ski day 3</h3>
+          <p class="day-desc">Non-skiers: village + onsen + relaxed pace.</p>
+        </div>
+      </article>
+      <article class="day-card">
+        <div class="day-date">20<small>Sat Feb</small></div>
+        <div class="day-body">
+          <span class="day-tag tag-free">Free</span>
+          <h3 class="day-title">Chill day</h3>
+          <p class="day-desc">Onsen, Sparena, slow village wander, pack. Everyone wind-down.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- LEG 05: TOKYO RETURN -->
+  <section class="leg-mega leg-tokyo" id="leg-05">
+    <div class="leg-hero">
+      <div class="leg-number">05</div>
+      <div class="leg-title-block">
+        <div class="leg-place">Tokyo</div>
+        <div class="leg-meta-row">Feb 21 — 25 / <span>4 nights</span> / Birthday</div>
+      </div>
+    </div>
+    <p class="leg-desc">Back to the city for the wind-down. The sushi-counter dinner. The slow re-pack.</p>
+
+    <div class="card">
+      <div class="card-label">Where we could stay</div>
+      <div class="card-item"><strong>MIMARU Tokyo Asakusa Station</strong> (same as arrival) — apt-hotel, family suites with full kitchens, lift access. <a class="card-link" href="https://mimaruhotels.com/en/hotel/asakusa-station/" target="_blank">Property →</a><span class="card-status">TBC</span></div>
+      <div class="card-item backup">Alternate: <strong>MIMARU Tokyo Shinjuku West</strong> (swap neighbourhood for the wind-down). <a class="card-link" href="https://mimaruhotels.com/en/hotel/shinjuku-west/" target="_blank">Property →</a></div>
+    </div>
+
+    <div class="days-stack">
+      <article class="day-card">
+        <div class="day-date">21<small>Sun Feb</small></div>
+        <div class="day-body">
+          <span class="day-tag tag-travel">Travel</span>
+          <h3 class="day-title">Nozawa → Tokyo</h3>
+          <p class="day-desc">~2.5–3 hr door-to-door. 9am Nozawa → ~12:30pm Tokyo. Daypacks only — bags forwarded Sat.</p>
+        </div>
+      </article>
+      <article class="day-card">
+        <div class="day-date">22<small>Mon Feb</small></div>
+        <div class="day-body">
+          <span class="day-tag tag-anchor">Anchor</span>
+          <h3 class="day-title">Dad's golf day</h3>
+          <p class="day-desc">Ginza morning (Honma + Mizuno flagships), Kanda Ogawamachi afternoon (Victoria Golf + sports street browse).</p>
+        </div>
+      </article>
+      <article class="day-card">
+        <div class="day-date">23<small>Tue Feb</small></div>
+        <div class="day-body">
+          <span class="day-tag tag-anchor">Anchor</span>
+          <h3 class="day-title">Ghibli + Birthday Dinner</h3>
+          <p class="day-desc">Morning: Ghibli Museum (Mitaka — book tickets 10am JST on 10 Jan 2027). Evening: Dad's birthday dinner — sushi counter.</p>
+        </div>
+      </article>
+      <article class="day-card">
+        <div class="day-date">24<small>Wed Feb</small></div>
+        <div class="day-body">
+          <span class="day-tag tag-anchor">Anchor</span>
+          <h3 class="day-title">teamLab Planets + Small Worlds</h3>
+          <p class="day-desc">teamLab Planets (Toyosu — barefoot water immersive) + Small Worlds Tokyo (Ariake — model city park, get inserted as figurines).</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="bonus-card">
+      <div class="bonus-label">If you've got time</div>
+      <div class="bonus-grid">
+        <div class="bonus-item-v2"><span class="bonus-cat">View</span><strong>Shibuya Sky</strong> — 230m glass-edged observation deck. Sunset is the play.</div>
+        <div class="bonus-item-v2"><span class="bonus-cat">Stationery</span><strong>Kakimori (Kuramae)</strong> — make-your-own notebook + custom ink.</div>
+        <div class="bonus-item-v2"><span class="bonus-cat">Art</span><strong>Yayoi Kusama Museum</strong> — lottery booking 2 months ahead.</div>
+        <div class="bonus-item-v2"><span class="bonus-cat">Design</span><strong>21_21 Design Sight</strong> — Tadao Ando, Midtown.</div>
+        <div class="bonus-item-v2"><span class="bonus-cat">Walk</span><strong>Yanaka old-town</strong> — quiet residential Tokyo.</div>
+        <div class="bonus-item-v2"><span class="bonus-cat">Sub-culture</span><strong>Nakano Broadway</strong> — multi-floor anime + Mandarake flagship.</div>
+        <div class="bonus-item-v2"><span class="bonus-cat">Beer</span><strong>Yebisu Beer Museum</strong> — small museum + tasting bar.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATUS -->
+  <section class="status-section">
+    <div class="section-label">Where We're At</div>
+    <h2 class="section-title">The <em>state of play</em></h2>
+    <div class="status-grid">
+      <div class="status-col">
+        <h3>Locked in</h3>
+        <ul>
+          <li>Flights (Brisbane → Narita, 2 Feb 17:30)</li>
+          <li>Nozawa dates (16–21 Feb)</li>
+          <li>5-leg itinerary shape</li>
+          <li>Three ski days + chill day in Nozawa</li>
+        </ul>
+      </div>
+      <div class="status-col">
+        <h3>Open threads</h3>
+        <ul>
+          <li>Machiya Residence Inn — Ruikou + Wakaba enquiry (June 2026)</li>
+          <li>Nozawa Dream Central — confirm dates + breakfast</li>
+          <li>Birthday dinner — sushi counter pick</li>
+          <li>Family input — sharing requests now</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Drafted in Claude · Living document · Last updated 18 May 2026
+  </footer>
+
+</div>
+</body>
+</html>
