@@ -252,6 +252,18 @@
     color: var(--muted);
     font-size: 12px;
   }
+  /* INLINE GLOSSARY LINKS */
+  a.t {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    transition: all 0.15s ease;
+  }
+  a.t:hover {
+    border-bottom-style: solid;
+    color: var(--ink);
+  }
+  a.t strong { font-weight: 500; }
   /* ACCOMMODATION SECTION */
   .leg-accom {
     padding: 14px 20px;
@@ -371,6 +383,7 @@
     .status-col li { border-bottom: 1pt dashed #ddd !important; }
     .status-col li:last-child { border-bottom: 0 !important; }
     footer { border-top: 1pt solid #ccc !important; }
+    a.t { color: #a8804a !important; border-bottom: 0.5pt dotted #a8804a !important; }
     .leg-accom { background: #eef5f5 !important; border-bottom: 1pt solid #ddd !important; }
     .leg-accom h4 { color: #4a6a6a !important; }
     .accom-item { color: #555 !important; }
@@ -443,19 +456,19 @@
       </div>
       <div class="days">
         <div class="day"><div class="day-date">Tue 2</div><div class="day-body"><span class="tag tag-travel">Travel</span>Brisbane → Tokyo Narita, lands <strong>17:30</strong>. Transfer to hotel (~90 min). Conbini / hotel dinner — likely settled by 21:00.</div></div>
-        <div class="day"><div class="day-date">Wed 3</div><div class="day-body"><span class="tag tag-anchor">Anchor</span>Morning: <strong>Kappabashi-dori</strong> kitchen town (knives, ceramics, plastic food samples). Afternoon: <strong>Setsubun at Sensō-ji</strong> — bean-throwing festival, oni costumes.</div></div>
-        <div class="day"><div class="day-date">Thu 4</div><div class="day-body"><span class="tag tag-anchor">Anchor</span>Morning: <strong>Tsukiji Outer Market</strong> — sashimi breakfast, market wander. Afternoon: <strong>Hama-rikyu Gardens</strong> + tea house on the pond island.</div></div>
-        <div class="day"><div class="day-date">Fri 5</div><div class="day-body"><span class="tag tag-anchor">Anchor</span><strong>Sumo morning practice</strong> (6:30am, adult split-cohort, Ryōgoku). Afternoon: depachika browse (Mitsukoshi / Isetan). Early night before Hakone.</div></div>
+        <div class="day"><div class="day-date">Wed 3</div><div class="day-body"><span class="tag tag-anchor">Anchor</span>Morning: <a class="t" href="https://www.japan-guide.com/e/e3020.html" target="_blank"><strong>Kappabashi-dori</strong></a> kitchen town (knives, ceramics, plastic food samples). Afternoon: <a class="t" href="https://www.japan-guide.com/e/e2284.html" target="_blank"><strong>Setsubun</strong></a> at <a class="t" href="https://www.japan-guide.com/e/e3001.html" target="_blank"><strong>Sensō-ji</strong></a> — bean-throwing festival, oni costumes.</div></div>
+        <div class="day"><div class="day-date">Thu 4</div><div class="day-body"><span class="tag tag-anchor">Anchor</span>Morning: <a class="t" href="https://www.japan-guide.com/e/e3021.html" target="_blank"><strong>Tsukiji Outer Market</strong></a> — sashimi breakfast, market wander. Afternoon: <a class="t" href="https://www.japan-guide.com/e/e3004.html" target="_blank"><strong>Hama-rikyu Gardens</strong></a> + tea house on the pond island.</div></div>
+        <div class="day"><div class="day-date">Fri 5</div><div class="day-body"><span class="tag tag-anchor">Anchor</span><a class="t" href="https://www.japan-guide.com/e/e2087.html" target="_blank"><strong>Sumo morning practice</strong></a> (6:30am, adult split-cohort, Ryōgoku). Afternoon: <a class="t" href="https://livejapan.com/en/in-tokyo/in-pref-tokyo/in-shinjuku/article-a0002873/" target="_blank">depachika</a> browse (Mitsukoshi / Isetan). Early night before Hakone.</div></div>
       </div>
       <div class="leg-bonus">
         <h4>Bonus — if you've got time</h4>
-        <div class="bonus-item"><span class="bonus-tag">Stationery</span><strong>Itoya Ginza</strong> — 13 floors of pens, washi, art supplies. Tokyo's stationery temple.</div>
-        <div class="bonus-item"><span class="bonus-tag">Kids</span><strong>Pokemon Cafe + Pokemon Center DX (Nihonbashi)</strong> — Pokemon HQ. Cafe needs ~1 month advance booking.</div>
-        <div class="bonus-item"><span class="bonus-tag">Chaos</span><strong>Don Quijote (Akihabara or Shibuya)</strong> — multi-floor discount megastore, snacks, weird stuff, tax-free.</div>
-        <div class="bonus-item"><span class="bonus-tag">Architecture</span><strong>Sumida Hokusai Museum</strong> — Kazuyo Sejima building + Hokusai prints. Pairs with Tsukiji morning.</div>
-        <div class="bonus-item"><span class="bonus-tag">Whisky</span><strong>Bar Zoetrope (Shinjuku)</strong> — 300+ Japanese whiskies, adult evening.</div>
-        <div class="bonus-item"><span class="bonus-tag">Nightlife</span><strong>Golden Gai (Shinjuku)</strong> — six tiny alleys of 4–8 seat bars, adults only.</div>
-        <div class="bonus-item"><span class="bonus-tag">Hands-on</span><strong>Buaisou indigo workshop (Kuramae)</strong> — traditional aizome dyeing, take a tote home.</div>
+        <div class="bonus-item"><span class="bonus-tag">Stationery</span><a class="t" href="https://www.ito-ya.co.jp/g.itoya/" target="_blank"><strong>Itoya Ginza</strong></a> — 13 floors of pens, washi, art supplies. Tokyo's stationery temple.</div>
+        <div class="bonus-item"><span class="bonus-tag">Kids</span><a class="t" href="https://www.pokemoncenter-online.com/cafe/en/" target="_blank"><strong>Pokemon Cafe + Pokemon Center DX (Nihonbashi)</strong></a> — Pokemon HQ. Cafe needs ~1 month advance booking.</div>
+        <div class="bonus-item"><span class="bonus-tag">Chaos</span><a class="t" href="https://www.tokyocheapo.com/shopping/donki-don-quijote-discount-store/" target="_blank"><strong>Don Quijote (Akihabara or Shibuya)</strong></a> — multi-floor discount megastore, snacks, weird stuff, tax-free.</div>
+        <div class="bonus-item"><span class="bonus-tag">Architecture</span><a class="t" href="https://hokusai-museum.jp/?lang=en" target="_blank"><strong>Sumida Hokusai Museum</strong></a> — Kazuyo Sejima building + Hokusai prints. Pairs with Tsukiji morning.</div>
+        <div class="bonus-item"><span class="bonus-tag">Whisky</span><a class="t" href="https://www.tokyocheapo.com/food-and-drink/whisky-bars-tokyo/" target="_blank"><strong>Bar Zoetrope (Shinjuku)</strong></a> — 300+ Japanese whiskies, adult evening.</div>
+        <div class="bonus-item"><span class="bonus-tag">Nightlife</span><a class="t" href="https://www.tokyocheapo.com/entertainment/nightlife/golden-gai-shinjuku-bar-guide/" target="_blank"><strong>Golden Gai (Shinjuku)</strong></a> — six tiny alleys of 4–8 seat bars, adults only.</div>
+        <div class="bonus-item"><span class="bonus-tag">Hands-on</span><a class="t" href="https://buaisou-i.com/" target="_blank"><strong>Buaisou indigo workshop (Kuramae)</strong></a> — traditional aizome dyeing, take a tote home.</div>
       </div>
     </div>
 
@@ -471,13 +484,13 @@
         <div class="accom-item"><strong>Hakone Ashinoko Hanaori</strong> — modern lakeside ryokan with private bookable onsens (tattoo-safe), Western-Japanese hybrid rooms (beds + chairs), lift access, family suites. <a class="accom-link" href="https://ashinoko-hanaori.hakonehotelspage.com/en/" target="_blank">Property →</a><span class="accom-status">TBC</span></div>
       </div>
       <div class="days">
-        <div class="day"><div class="day-date">Sat 6</div><div class="day-body"><span class="tag tag-travel">Travel</span>Tokyo → Hakone on Odakyu Romancecar (~85 min). Lunch in Yumoto. Afternoon: <strong>Hakone Open-Air Museum</strong>. Check in to ryokan, onsen + kaiseki dinner.</div></div>
-        <div class="day"><div class="day-date">Sun 7</div><div class="day-body"><span class="tag tag-anchor">Anchor</span><strong>The Hakone Loop</strong> — Tozan switchback railway → cable car → ropeway over Owakudani (volcanic valley, black eggs) → pirate ship across Lake Ashi (Fuji views) → Hakone Shrine (torii in the water) → bus back.</div></div>
+        <div class="day"><div class="day-date">Sat 6</div><div class="day-body"><span class="tag tag-travel">Travel</span>Tokyo → Hakone on <a class="t" href="https://www.odakyu.jp/english/romancecar/" target="_blank">Odakyu Romancecar</a> (~85 min). Lunch in Yumoto. Afternoon: <a class="t" href="https://www.hakone-oam.or.jp/en/" target="_blank"><strong>Hakone Open-Air Museum</strong></a>. Check in to <a class="t" href="https://www.japan-guide.com/e/e2029.html" target="_blank">ryokan</a>, <a class="t" href="https://www.japan-guide.com/e/e2292.html" target="_blank">onsen</a> + <a class="t" href="https://www.japan-guide.com/e/e2042.html" target="_blank">kaiseki</a> dinner.</div></div>
+        <div class="day"><div class="day-date">Sun 7</div><div class="day-body"><span class="tag tag-anchor">Anchor</span><a class="t" href="https://www.japan-guide.com/e/e5200.html" target="_blank"><strong>The Hakone Loop</strong></a> — Tozan switchback railway → cable car → ropeway over <a class="t" href="https://www.japan-guide.com/e/e5208.html" target="_blank">Owakudani</a> (volcanic valley, black eggs) → pirate ship across <a class="t" href="https://www.japan-guide.com/e/e5210.html" target="_blank">Lake Ashi</a> (Fuji views) → <a class="t" href="https://www.japan-guide.com/e/e5211.html" target="_blank">Hakone Shrine</a> (torii in the water) → bus back.</div></div>
       </div>
       <div class="leg-bonus">
         <h4>Bonus — if you've got time</h4>
-        <div class="bonus-item"><span class="bonus-tag">Art</span><strong>Pola Museum of Art</strong> — Impressionists in a forest setting, walk-able from the ropeway.</div>
-        <div class="bonus-item"><span class="bonus-tag">Photogenic</span><strong>Hakone Glass Forest (Venetian Glass Museum)</strong> — kid-friendly, very pretty.</div>
+        <div class="bonus-item"><span class="bonus-tag">Art</span><a class="t" href="https://www.polamuseum.or.jp/en/" target="_blank"><strong>Pola Museum of Art</strong></a> — Impressionists in a forest setting, walk-able from the ropeway.</div>
+        <div class="bonus-item"><span class="bonus-tag">Photogenic</span><a class="t" href="https://www.hakone-garasunomori.jp/" target="_blank"><strong>Hakone Glass Forest (Venetian Glass Museum)</strong></a> — kid-friendly, very pretty.</div>
       </div>
     </div>
 
@@ -495,25 +508,25 @@
         <div class="accom-item backup">Backup 2: <strong>Tofukuji Samurai Machiya</strong> (5 BR / sleeps 9, 2 Western beds + full kitchen, bookable now — no booking-window wait). <a class="accom-link" href="https://www.booking.com/hotel/jp/dong-fu-si-samuraiting-jia-tofukuji-samurai-machiya.html" target="_blank">Property →</a></div>
       </div>
       <div class="days">
-        <div class="day"><div class="day-date">Mon 8</div><div class="day-body"><span class="tag tag-travel">Travel</span>Hakone → Kyoto via shinkansen (~2 hr 15). Check in.</div></div>
-        <div class="day"><div class="day-date">Tue 9</div><div class="day-body"><span class="tag tag-anchor">Anchor</span><strong>Higashiyama / Gion day</strong> — Kiyomizu-dera, Sannenzaka/Ninenzaka, Yasaka Shrine, Gion wander. Optional free walking tour in the morning.</div></div>
-        <div class="day"><div class="day-date">Wed 10</div><div class="day-body"><span class="tag tag-anchor">Anchor</span><strong>Fushimi day</strong> — Inari shrine 1000 torii morning, Fushimi sake district afternoon (Gekkeikan museum + tasting, Kizakura).</div></div>
-        <div class="day"><div class="day-date">Thu 11</div><div class="day-body"><span class="tag tag-anchor">Anchor</span>Morning: <strong>Nara half-day</strong> — Tōdai-ji giant Buddha + deer park. Afternoon back in Kyoto.</div></div>
-        <div class="day"><div class="day-date">Fri 12</div><div class="day-body"><span class="tag tag-anchor">Anchor</span><strong>Himeji Castle day trip</strong> (~50 min shinkansen). Keep climb + Koko-en gardens. Split-cohort if Goldie skips the keep.</div></div>
-        <div class="day"><div class="day-date">Sat 13</div><div class="day-body"><span class="tag tag-anchor">Anchor</span><strong>Kids day</strong> — Toei Kyoto Studio Park (samurai film set, ninja shows, costume dress-up) + Kyoto Railway Museum.</div></div>
-        <div class="day"><div class="day-date">Sun 14</div><div class="day-body"><span class="tag tag-anchor">Anchor</span>Yamazaki + Kaiyukan day — split cohort, adults distillery / kids aquarium.</div></div>
-        <div class="day"><div class="day-date">Mon 15</div><div class="day-body"><span class="tag tag-free">Free</span>Morning: <strong>forward bags to Nozawa via Yamato Takkyubin</strong> (arrives Tue). Afternoon: free / last Kyoto wander.</div></div>
+        <div class="day"><div class="day-date">Mon 8</div><div class="day-body"><span class="tag tag-travel">Travel</span>Hakone → Kyoto via <a class="t" href="https://www.japan-guide.com/e/e2018.html" target="_blank">shinkansen</a> (~2 hr 15). Check in.</div></div>
+        <div class="day"><div class="day-date">Tue 9</div><div class="day-body"><span class="tag tag-anchor">Anchor</span><a class="t" href="https://www.japan-guide.com/e/e3902.html" target="_blank"><strong>Higashiyama</strong></a> / <a class="t" href="https://www.japan-guide.com/e/e3911.html" target="_blank"><strong>Gion</strong></a> day — <a class="t" href="https://www.japan-guide.com/e/e3901.html" target="_blank">Kiyomizu-dera</a>, Sannenzaka/Ninenzaka, <a class="t" href="https://www.japan-guide.com/e/e3906.html" target="_blank">Yasaka Shrine</a>, Gion wander. Optional free walking tour in the morning.</div></div>
+        <div class="day"><div class="day-date">Wed 10</div><div class="day-body"><span class="tag tag-anchor">Anchor</span><strong>Fushimi day</strong> — <a class="t" href="https://www.japan-guide.com/e/e3915.html" target="_blank">Inari shrine 1000 torii</a> morning, <a class="t" href="https://www.japan-guide.com/e/e3918.html" target="_blank">Fushimi sake district</a> afternoon (Gekkeikan museum + tasting, Kizakura).</div></div>
+        <div class="day"><div class="day-date">Thu 11</div><div class="day-body"><span class="tag tag-anchor">Anchor</span>Morning: <a class="t" href="https://www.japan-guide.com/e/e4100.html" target="_blank"><strong>Nara half-day</strong></a> — <a class="t" href="https://www.japan-guide.com/e/e4100.html" target="_blank">Tōdai-ji</a> giant Buddha + <a class="t" href="https://www.japan-guide.com/e/e4101.html" target="_blank">deer park</a>. Afternoon back in Kyoto.</div></div>
+        <div class="day"><div class="day-date">Fri 12</div><div class="day-body"><span class="tag tag-anchor">Anchor</span><a class="t" href="https://www.japan-guide.com/e/e3501.html" target="_blank"><strong>Himeji Castle day trip</strong></a> (~50 min shinkansen). Keep climb + <a class="t" href="https://www.japan-guide.com/e/e3502.html" target="_blank">Koko-en gardens</a>. Split-cohort if Goldie skips the keep.</div></div>
+        <div class="day"><div class="day-date">Sat 13</div><div class="day-body"><span class="tag tag-anchor">Anchor</span><strong>Kids day</strong> — <a class="t" href="https://www.toei-eigamura.com/global/en/" target="_blank">Toei Kyoto Studio Park</a> (samurai film set, ninja shows, costume dress-up) + <a class="t" href="https://www.kyotorailwaymuseum.jp/en/" target="_blank">Kyoto Railway Museum</a>.</div></div>
+        <div class="day"><div class="day-date">Sun 14</div><div class="day-body"><span class="tag tag-anchor">Anchor</span><a class="t" href="https://www.suntory.com/factory/yamazaki/" target="_blank">Yamazaki</a> + <a class="t" href="https://www.kaiyukan.com/language/eng/" target="_blank">Kaiyukan</a> day — split cohort, adults distillery / kids aquarium.</div></div>
+        <div class="day"><div class="day-date">Mon 15</div><div class="day-body"><span class="tag tag-free">Free</span>Morning: <strong>forward bags to Nozawa via <a class="t" href="https://www.tokyocheapo.com/travel/yamato-takkyubin/" target="_blank">Yamato Takkyubin</a></strong> (arrives Tue). Afternoon: free / last Kyoto wander.</div></div>
       </div>
       <div class="leg-bonus">
         <h4>Bonus — if you've got time</h4>
-        <div class="bonus-item"><span class="bonus-tag">Food</span><strong>Nishiki Market</strong> — "Kyoto's kitchen," covered food street, snack as you walk.</div>
-        <div class="bonus-item"><span class="bonus-tag">Nightlife</span><strong>Pontocho alley</strong> — narrow lantern-lit alley packed with restaurants and bars after dark.</div>
-        <div class="bonus-item"><span class="bonus-tag">Food</span><strong>Kichi Kichi omurice</strong> — theatrical chef-as-show omurice (the famous YouTube one). Book ahead.</div>
-        <div class="bonus-item"><span class="bonus-tag">Calendar gift</span><strong>Plum blossom at Kitano Tenmangu</strong> — ~1,500 plum trees in peak bloom mid-Feb. Plum tea house in the grounds.</div>
-        <div class="bonus-item"><span class="bonus-tag">Culture</span><strong>Tea ceremony with a master</strong> — proper sit-down, ~90 min. Operators: Camellia, En, Hozan-ji.</div>
-        <div class="bonus-item"><span class="bonus-tag">Kimono</span><strong>Kimono dress-up in Gion</strong> — get dressed and photographed in old Kyoto streets.</div>
-        <div class="bonus-item"><span class="bonus-tag">Bamboo</span><strong>Arashiyama half-day</strong> — bamboo grove + Tenryū-ji + Togetsukyo bridge. Skip the monkey park.</div>
-        <div class="bonus-item"><span class="bonus-tag">Temple</span><strong>Saiho-ji Moss Temple</strong> — advance postal reservation only, sutra-copying meditation, otherworldly.</div>
+        <div class="bonus-item"><span class="bonus-tag">Food</span><a class="t" href="https://www.japan-guide.com/e/e3940.html" target="_blank"><strong>Nishiki Market</strong></a> — "Kyoto's kitchen," covered food street, snack as you walk.</div>
+        <div class="bonus-item"><span class="bonus-tag">Nightlife</span><a class="t" href="https://www.japan-guide.com/e/e3909.html" target="_blank"><strong>Pontocho alley</strong></a> — narrow lantern-lit alley packed with restaurants and bars after dark.</div>
+        <div class="bonus-item"><span class="bonus-tag">Food</span><a class="t" href="https://kichikichi.com/" target="_blank"><strong>Kichi Kichi omurice</strong></a> — theatrical chef-as-show omurice (the famous YouTube one). Book ahead.</div>
+        <div class="bonus-item"><span class="bonus-tag">Calendar gift</span><a class="t" href="https://www.japan-guide.com/e/e3947.html" target="_blank"><strong>Plum blossom at Kitano Tenmangu</strong></a> — ~1,500 plum trees in peak bloom mid-Feb. Plum tea house in the grounds.</div>
+        <div class="bonus-item"><span class="bonus-tag">Culture</span><a class="t" href="https://www.tea-kyoto.com/" target="_blank"><strong>Tea ceremony with a master</strong></a> — proper sit-down, ~90 min. Operators: Camellia, En, Hozan-ji.</div>
+        <div class="bonus-item"><span class="bonus-tag">Kimono</span><a class="t" href="https://www.japan-guide.com/e/e2289.html" target="_blank"><strong>Kimono dress-up in Gion</strong></a> — get dressed and photographed in old Kyoto streets.</div>
+        <div class="bonus-item"><span class="bonus-tag">Bamboo</span><a class="t" href="https://www.japan-guide.com/e/e3912.html" target="_blank"><strong>Arashiyama half-day</strong></a> — bamboo grove + Tenryū-ji + Togetsukyo bridge. Skip the monkey park.</div>
+        <div class="bonus-item"><span class="bonus-tag">Temple</span><a class="t" href="https://www.japan-guide.com/e/e3955.html" target="_blank"><strong>Saiho-ji Moss Temple</strong></a> — advance postal reservation only, sutra-copying meditation, otherworldly.</div>
       </div>
     </div>
 
@@ -530,8 +543,8 @@
       </div>
       <div class="days">
         <div class="day"><div class="day-date">Tue 16</div><div class="day-body"><span class="tag tag-travel">Travel</span>Kyoto → Tokyo → Iiyama → Nozawa (~5 hr door-to-door). Daypacks only — bags arrive separately. <strong>9am Kyoto → ~2:30pm Nozawa.</strong> Check in, onsen, settle.</div></div>
-        <div class="day"><div class="day-date">Wed 17</div><div class="day-body"><span class="tag tag-anchor">Anchor</span><strong>Ski day 1.</strong> Girls in lessons. Non-skiers: village + Sparena + Sakaya Honten sake.</div></div>
-        <div class="day"><div class="day-date">Thu 18</div><div class="day-body"><span class="tag tag-anchor">Anchor</span><strong>Ski day 2.</strong> Non-skiers optional <strong>Nagano + Obuse</strong> day-trip (Zenkō-ji, Hokusai Museum, Masuichi-Ichimura sake).</div></div>
+        <div class="day"><div class="day-date">Wed 17</div><div class="day-body"><span class="tag tag-anchor">Anchor</span><strong>Ski day 1.</strong> Girls in lessons. Non-skiers: village + <a class="t" href="https://www.nozawaski.com/en/sparena/" target="_blank">Sparena</a> + Sakaya Honten sake.</div></div>
+        <div class="day"><div class="day-date">Thu 18</div><div class="day-body"><span class="tag tag-anchor">Anchor</span><strong>Ski day 2.</strong> Non-skiers optional <strong><a class="t" href="https://www.japan-guide.com/e/e6050.html" target="_blank">Nagano</a> + <a class="t" href="https://www.japan-guide.com/e/e6053.html" target="_blank">Obuse</a></strong> day-trip (<a class="t" href="https://www.japan-guide.com/e/e6051.html" target="_blank">Zenkō-ji</a>, <a class="t" href="https://hokusai-kan.com/" target="_blank">Hokusai Museum</a>, <a class="t" href="https://www.masuichi.com/en/" target="_blank">Masuichi-Ichimura</a> sake).</div></div>
         <div class="day"><div class="day-date">Fri 19</div><div class="day-body"><span class="tag tag-anchor">Anchor</span><strong>Ski day 3.</strong> Non-skiers: village + onsen + relaxed pace.</div></div>
         <div class="day"><div class="day-date">Sat 20</div><div class="day-body"><span class="tag tag-free">Free</span><strong>Chill day.</strong> Onsen, Sparena, slow village wander, pack. Everyone wind-down.</div></div>
       </div>
@@ -551,19 +564,19 @@
       </div>
       <div class="days">
         <div class="day"><div class="day-date">Sun 21</div><div class="day-body"><span class="tag tag-travel">Travel</span>Nozawa → Tokyo (~2.5–3 hr door-to-door). 9am Nozawa → ~12:30pm Tokyo. Daypacks only — bags forwarded Sat.</div></div>
-        <div class="day"><div class="day-date">Mon 22</div><div class="day-body"><span class="tag tag-anchor">Anchor</span><strong>Dad's golf day</strong> — Ginza morning (Honma + Mizuno flagships), Kanda Ogawamachi afternoon (Victoria Golf + sports street browse).</div></div>
-        <div class="day"><div class="day-date">Tue 23</div><div class="day-body"><span class="tag tag-anchor">Anchor</span>Morning: <strong>Ghibli Museum</strong> (Mitaka — book tickets 10am JST on 10 Jan 2027). Evening: <strong>Dad's birthday dinner</strong> — sushi counter.</div></div>
-        <div class="day"><div class="day-date">Wed 24</div><div class="day-body"><span class="tag tag-anchor">Anchor</span><strong>teamLab Planets</strong> (Toyosu — barefoot water immersive) + <strong>Small Worlds Tokyo</strong> (Ariake — model city park, get inserted as figurines).</div></div>
+        <div class="day"><div class="day-date">Mon 22</div><div class="day-body"><span class="tag tag-anchor">Anchor</span><strong>Dad's golf day</strong> — <a class="t" href="https://www.japan-guide.com/e/e3005.html" target="_blank">Ginza</a> morning (<a class="t" href="https://www.honma.com/global/" target="_blank">Honma</a> + <a class="t" href="https://corp.mizuno.com/global/" target="_blank">Mizuno</a> flagships), Kanda Ogawamachi afternoon (<a class="t" href="https://www.victoriagolf.co.jp/" target="_blank">Victoria Golf</a> + sports street browse).</div></div>
+        <div class="day"><div class="day-date">Tue 23</div><div class="day-body"><span class="tag tag-anchor">Anchor</span>Morning: <a class="t" href="https://www.ghibli-museum.jp/en/" target="_blank"><strong>Ghibli Museum</strong></a> (Mitaka — book tickets 10am JST on 10 Jan 2027). Evening: <strong>Dad's birthday dinner</strong> — sushi counter.</div></div>
+        <div class="day"><div class="day-date">Wed 24</div><div class="day-body"><span class="tag tag-anchor">Anchor</span><a class="t" href="https://www.teamlab.art/e/planets/" target="_blank"><strong>teamLab Planets</strong></a> (Toyosu — barefoot water immersive) + <a class="t" href="https://www.smallworlds.jp/en/" target="_blank"><strong>Small Worlds Tokyo</strong></a> (Ariake — model city park, get inserted as figurines).</div></div>
       </div>
       <div class="leg-bonus">
         <h4>Bonus — if you've got time</h4>
-        <div class="bonus-item"><span class="bonus-tag">View</span><strong>Shibuya Sky</strong> — 230m glass-edged open-air observation deck. Sunset is the play.</div>
-        <div class="bonus-item"><span class="bonus-tag">Stationery</span><strong>Kakimori (Kuramae)</strong> — make-your-own notebook + custom ink at Inkstand next door. Reddit favourite.</div>
-        <div class="bonus-item"><span class="bonus-tag">Art</span><strong>Yayoi Kusama Museum</strong> — Kusama deep dive. Lottery booking opens 2 months ahead.</div>
-        <div class="bonus-item"><span class="bonus-tag">Design</span><strong>21_21 Design Sight (Tadao Ando, Midtown)</strong> — rotating design exhibitions.</div>
-        <div class="bonus-item"><span class="bonus-tag">Walk</span><strong>Yanaka old-town</strong> — quiet residential Tokyo, narrow lanes, less touristy.</div>
-        <div class="bonus-item"><span class="bonus-tag">Sub-culture</span><strong>Nakano Broadway</strong> — multi-floor anime/manga/used goods. Mandarake flagship inside.</div>
-        <div class="bonus-item"><span class="bonus-tag">Beer</span><strong>Yebisu Beer Museum</strong> — small museum + tasting bar, dad-coded half-day.</div>
+        <div class="bonus-item"><span class="bonus-tag">View</span><a class="t" href="https://www.shibuya-scramble-square.com/sky/en/" target="_blank"><strong>Shibuya Sky</strong></a> — 230m glass-edged open-air observation deck. Sunset is the play.</div>
+        <div class="bonus-item"><span class="bonus-tag">Stationery</span><a class="t" href="https://kakimori.com/en/" target="_blank"><strong>Kakimori (Kuramae)</strong></a> — make-your-own notebook + custom ink at Inkstand next door. Reddit favourite.</div>
+        <div class="bonus-item"><span class="bonus-tag">Art</span><a class="t" href="https://yayoikusamamuseum.jp/?lang=en" target="_blank"><strong>Yayoi Kusama Museum</strong></a> — Kusama deep dive. Lottery booking opens 2 months ahead.</div>
+        <div class="bonus-item"><span class="bonus-tag">Design</span><a class="t" href="https://www.2121designsight.jp/en/" target="_blank"><strong>21_21 Design Sight (Tadao Ando, Midtown)</strong></a> — rotating design exhibitions.</div>
+        <div class="bonus-item"><span class="bonus-tag">Walk</span><a class="t" href="https://www.japan-guide.com/e/e3018.html" target="_blank"><strong>Yanaka old-town</strong></a> — quiet residential Tokyo, narrow lanes, less touristy.</div>
+        <div class="bonus-item"><span class="bonus-tag">Sub-culture</span><a class="t" href="https://www.tokyocheapo.com/place/nakano-broadway/" target="_blank"><strong>Nakano Broadway</strong></a> — multi-floor anime/manga/used goods. Mandarake flagship inside.</div>
+        <div class="bonus-item"><span class="bonus-tag">Beer</span><a class="t" href="https://www.museum-ebisu.jp/" target="_blank"><strong>Yebisu Beer Museum</strong></a> — small museum + tasting bar, dad-coded half-day.</div>
       </div>
     </div>
 
