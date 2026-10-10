@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Japan 2027: day by day</title>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#efece6;font-family:Geist,Inter,-apple-system,sans-serif;color:#24211c;padding:32px 16px 56px;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer;text-align:left}
+.tnum{font-feature-settings:'tnum'}
+.tok{--f:#f0ebf5;--i:#6a4d8a}
+.hak{--f:#edf0e6;--i:#5a6a46}
+.kyo{--f:#f8ece3;--i:#a0563a}
+.noz{--f:#e3eef2;--i:#3f6672}
+.app{max-width:440px;margin:0 auto;background:#f8f6f2;border:1px solid #e2ddd4;border-radius:28px;padding:28px 18px 24px}
+h1{font-size:20px;font-weight:500;letter-spacing:-.01em}
+.meta{font-size:12px;color:#8a8478;margin-top:4px}
+.sleeps{display:inline-block;margin-top:10px;font-size:12px;background:#fff;border:1px solid #ebe7e0;border-radius:999px;padding:3px 10px;color:#625c53}
+.legend{display:flex;gap:6px;margin:16px 0 6px;flex-wrap:wrap;align-items:center}
+.legend span{font-size:12px;background:var(--f);color:var(--i);border-radius:999px;padding:3px 9px}
+.keys{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:#8a8478;margin:0 0 14px 2px}
+.keys span{white-space:nowrap;display:inline-flex;align-items:center;gap:5px}
+.keys i{width:6px;height:6px;border-radius:50%;background:#625c53;display:inline-block}
+.keys u{width:12px;height:10px;border:1px dashed #625c53;border-radius:3px;display:inline-block;background:#fff}
+.keys b{font-weight:400;color:#625c53;font-size:13px}
+.wk,.week{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.wk{font-size:11px;color:#8a8478;text-align:center;margin-bottom:4px}
+.week{margin-top:4px}
+.c{height:82px;border-radius:10px;background:var(--f);padding:6px;display:flex;flex-direction:column;justify-content:space-between;position:relative;min-width:0;transition:transform .12s}
+.c:active{transform:scale(.97)}
+.c:focus-visible{outline:2px solid #24211c;outline-offset:1px}
+.c.off{background:#faf9f6;cursor:default;height:82px}
+.c.off:active{transform:none}
+.c .n{font-size:13px;font-weight:500;color:var(--i,#cfc9be)}
+.c .top{display:flex;align-items:center;gap:3px}
+.c .wi{font-size:12px;line-height:1}
+.c .mid>span:first-child{white-space:nowrap}
+.c .mid{display:flex;align-items:center;justify-content:space-between;font-size:13px;line-height:1;min-height:14px}
+.c .mk{font-size:12px;color:var(--i);opacity:.8}
+.c .w{font-size:10.5px;line-height:1.2;color:var(--i)}
+.c.go{background:#fff;border:1px dashed var(--i)}
+.c.sel{outline:2px solid #24211c;outline-offset:1px}
+.c.today:before{content:"";position:absolute;left:50%;bottom:-5px;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:#24211c}
+.c .star{position:absolute;right:6px;top:7px;width:6px;height:6px;border-radius:50%;background:var(--i)}
+.detail{margin:8px 0 4px;background:#fff;border:1px solid #ebe7e0;border-radius:16px;padding:16px;animation:open .18s ease-out}
+@keyframes open{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+.detail .h{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.detail .h b{font-size:17px;font-weight:500;letter-spacing:-.01em}
+.detail .h span{font-size:12px;background:var(--f);color:var(--i);border-radius:999px;padding:2px 9px;white-space:nowrap}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.tags em{font-style:normal;font-size:12px;color:#625c53;background:#f8f6f2;border-radius:999px;padding:2px 9px}
+.slot{display:grid;grid-template-columns:84px 1fr;gap:10px;margin-top:12px;font-size:13.5px;line-height:1.45}
+.slot i{font-style:normal;font-size:12px;color:#8a8478;padding-top:2px}
+.slot b{font-weight:500;color:var(--i)}
+.slot p{color:#625c53}
+.slot a{color:var(--i);text-decoration:underline dotted;text-underline-offset:3px;text-decoration-thickness:1px}
+.slot a:hover{text-decoration-style:solid}
+.slot b a{font-weight:500}
+.tmr{margin-top:14px;background:var(--f);border-radius:12px;padding:10px 12px;font-size:13px;line-height:1.45;color:var(--i)}
+.tmr small{display:block;font-size:12px;opacity:.75;margin-bottom:2px}
+.tmr div+div{margin-top:3px}
+.next{margin-top:16px;padding-top:12px;border-top:1px solid #ebe7e0;display:flex;justify-content:space-between;font-size:12px;color:#8a8478}
+.next button{padding:4px 0;color:#625c53}
+.next button:disabled{opacity:.3;cursor:default}
+.hint{font-size:12px;color:#8a8478;margin-top:14px;text-align:center}
+.ideas{margin-top:14px;border-top:1px solid #ebe7e0}
+.ideas summary{list-style:none;cursor:pointer;padding:12px 0 4px;font-size:13px;color:var(--i);display:flex;justify-content:space-between;align-items:center}
+.ideas summary::-webkit-details-marker{display:none}
+.ideas summary:after{content:"+";font-size:15px}
+.ideas[open] summary:after{content:"\2013"}
+.ideas summary small{font-size:12px;opacity:.7;margin-left:6px}
+.ideas ul{list-style:none}
+.ideas li{font-size:13.5px;line-height:1.4;padding:9px 0;border-top:1px solid #ebe7e0}
+.ideas li:first-child{border-top:0}
+.ideas li p{color:#625c53;font-size:12.5px}
+.ideas a{color:var(--i);text-decoration:underline dotted;text-underline-offset:3px;font-weight:500}
+@media (max-width:480px){body{padding:0}.app{border-radius:0;border-width:0;min-height:100vh;padding:24px 14px 32px}}
+</style></head><body>
+<div class="app">
+  <h1>Japan, February 2027</h1>
+  <p class="meta tnum">9 of us · 2 – 25 Feb</p>
+  <p class="sleeps tnum" id="sl" hidden></p>
+  <div class="legend">
+    <span class="tok">Tokyo</span><span class="hak">Hakone</span><span class="kyo">Kyoto</span><span class="noz">Nozawa</span>
+  </div>
+  <div class="keys">
+    <span><i></i>highlight</span><span><u></u>travel</span><span><b>◐</b>split day</span><span><b>☾</b>rest day</span>
+  </div>
+  <div class="wk"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
+  <div id="cal" class="tnum"></div>
+  <p class="hint">Tap a day to open it. Weather shows up here about two weeks before we go.</p>
+</div>
+
+<script>
+const L={t:['tok','Tokyo'],h:['hak','Hakone'],k:['kyo','Kyoto'],n:['noz','Nozawa']};
+const WD=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+const MODE={f:'All together',s:'Split day',r:'Rest day'};
+const MK={f:'',s:'◐',r:'☾'};
+const W={};
+/* [a-z0-9_]+ in a link means a japan-guide.com page; anything starting http is used as is */
+const lk=s=>s.replace(/\[([^\]]+)\]\(([^)]+)\)/g,(m,t,u)=>'<a href="'+(u.startsWith('http')?u:'https://www.japan-guide.com/e/'+u+'.html')+'" target="_blank" rel="noopener">'+t+'</a>');
+
+/* day, leg, emoji, cell label, title, flags (s highlight, g travel), mode, slots [when, headline, text] */
+const D=[
+[2,'t','✈️','Fly in',"Landing in Tokyo",'g','f',[
+ ['Getting there','Land at Narita around 17:30','Transfer into the city takes about 90 min.'],
+ ['Evening','Settle in','Convenience-store or home dinner, and an early night.']]],
+[3,'t','🎂','Setsubun',"Setsubun, and Goldie's birthday",'s','f',[
+ ['All day','🎂 Happy birthday Goldie',''],
+ ['Morning','[Kappabashi](e3020) kitchen town','Knives, ceramics and plastic food samples.'],
+ ['Afternoon','[Setsubun](e2285) at [Sensō-ji](e3001)','The bean-throwing festival, with people in oni costumes.']]],
+[4,'t','','Tsukiji',"Markets and gardens",'','s',[
+ ['Morning','[Tsukiji Outer Market](e3021)','Sashimi breakfast and a wander through the stalls.'],
+ ['Afternoon','[Hama-rikyu Gardens](e3025)','Tea house on the pond island.'],
+ ['Gray + Soph','[Golden Gai](https://www.tokyocheapo.com/entertainment/nightlife/golden-gai/)','A tiny-bar crawl in Shinjuku, then whisky at [Bar Zoetrope](https://trulytokyo.com/zoetrope/).']]],
+[5,'t','','Sumo',"Sumo morning",'s','s',[
+ ['Morning','[Sumo morning practice](https://tokyocheapo.com/entertainment/sport/morning-sumo-practice/)','A 6:30 am start in Ryōgoku. The adults go.'],
+ ['Afternoon','[Depachika food halls](https://tokyocheapo.com/food-and-drink/depachika-underground-food-halls-tokyo/)','Browse the basement food floors at Mitsukoshi or Isetan.'],
+ ['Evening','Early night','Hakone tomorrow.']]],
+[6,'h','🚃','To Hakone',"To Hakone",'g','f',[
+ ['Getting there','[Odakyu Romancecar](https://livejapan.com/en/in-tokyo/in-pref-kanagawa/in-hakone_odawara/article-a0003297/)','Tokyo to Hakone in about 85 min.'],
+ ['Afternoon','Lunch in Yumoto, then the [Open-Air Museum](e5208)','Sculpture park in the hills.'],
+ ['Evening','[Onsen](e2292) and [kaiseki](e2348) dinner','Check in, soak, then a long slow dinner.']]],
+[7,'h','','The loop',"The Hakone Loop",'s','f',[
+ ['All day','[The Hakone Loop](e5200)','Switchback railway, cable car, then the ropeway over [Owakudani](e5203), the volcanic valley where they boil black eggs.'],
+ ['Afternoon','[Lake Ashi](e5201) and [Hakone Shrine](e5204)','A pirate ship across the lake with Fuji views, then the torii standing in the water. Bus back.']]],
+[8,'k','🚄','To Kyoto',"To Kyoto",'g','f',[
+ ['Getting there','[Shinkansen](e2018) to Kyoto','About 2 hr 15 min.'],
+ ['Afternoon','Check in','Settle into the house and get our bearings.']]],
+[9,'k','','Gion',"Higashiyama and Gion",'','f',[
+ ['Morning','Optional guided walk','Easy way in to the old city.'],
+ ['All day','[Higashiyama](e3959) and [Gion](e3902)','[Kiyomizu-dera](e3901) temple, the Sannenzaka and Ninenzaka lanes, [Yasaka Shrine](e3903), then a wander through Gion.']]],
+[10,'k','','Inari',"Fushimi day",'s','f',[
+ ['Morning','[Fushimi Inari](e3915)','The thousand red torii gates.'],
+ ['Afternoon','[Fushimi sake district](e3938)','Gekkeikan museum and tasting, then Kizakura.']]],
+[11,'k','','Nara deer',"Nara half-day",'','f',[
+ ['Morning','[Nara](e2165)','[Tōdai-ji](e4100) and its giant Buddha, then the [deer park](e4103).'],
+ ['Afternoon','Back in Kyoto','Easy afternoon.']]],
+[12,'k','','Himeji',"Himeji, and Naoshima",'s','s',[
+ ['Family','[Himeji Castle](e3501) day trip','About 50 min on the shinkansen. Climb the keep and walk [Koko-en gardens](e3502). Goldie can skip the climb.'],
+ ['Gray + Soph','Off to [Naoshima](https://benesse-artsite.jp/en/)','Leave Kyoto for the island (about 2.5 hr). Benesse House Museum and the Kusama pumpkin in the afternoon, then stay the night on the island.']]],
+[13,'k','','Kids day',"Kids day",'','s',[
+ ['Morning','Bags go ahead to Nozawa','Sent by courier ([Yamato Takkyubin](e2278)), they arrive at the lodge on Sunday.'],
+ ['Family','[Toei Kyoto Studio Park](https://www.magical-trip.com/media/toei-uzumasa-eigamura-kyoto-studio-park-guide-opening-hours/) and the [Railway Museum](e3972)',''],
+ ['Gray + Soph','Chichu and Lee Ufan museums','A morning on Naoshima, then ferry and train back to Kyoto.'],
+ ['Evening','Family dinner','Everyone back together.']]],
+[14,'n','🚄','To Nozawa',"To Nozawa",'g','f',[
+ ['Getting there','Kyoto, Tokyo, Iiyama, Nozawa','About 5 hr door to door, roughly 9 am to 2:30 pm. Daypacks only, the bags are already there.'],
+ ['Afternoon','Check in at Chohachisou Lodge','Onsen and settle in.']]],
+[15,'n','','Ski',"Ski day 1",'','s',[
+ ['Skiers','On the mountain','Girls with parents and uncles.'],
+ ['Non-skiers','Village and [Sparena](https://en.nozawaski.com/summer/facilities/sparena-onsen/)','The village, the Sparena onsen and Sakaya Honten sake.']]],
+[16,'n','','Ski',"Ski day 2",'','s',[
+ ['Skiers','On the mountain',''],
+ ['Non-skiers','Optional [Nagano](e6000) and [Obuse](e6020) day trip','[Zenkō-ji](e6001) temple, the [Hokusai Museum](e6022) and [Masuichi-Ichimura](https://www.nippon.com/en/guide-to-japan/gu001003/) sake.']]],
+[17,'n','','Ski',"Ski day 3",'','s',[
+ ['Skiers','On the mountain',''],
+ ['Non-skiers','Village and onsen','A relaxed pace.']]],
+[18,'n','','Chill day',"Chill day",'','r',[
+ ['All day','Onsen, Sparena, slow wander','Everyone winds down.'],
+ ['Evening','Pack up','Bags go ahead to Tokyo today.']]],
+[19,'t','✈️','Soph flies',"To Tokyo, Soph flies",'g','f',[
+ ['Getting there','Nozawa to Tokyo','About 2.5 to 3 hr, roughly 9 am to 12:30 pm. Daypacks only.'],
+ ['Soph','Flies today','']]],
+[20,'t','','Slow day',"Slow day",'','r',[
+ ['All day','Wind down from the snow','A slow Tokyo wander, [depachika](https://tokyocheapo.com/food-and-drink/depachika-underground-food-halls-tokyo/) lunch, an easy day.']]],
+[21,'t','','Karaoke',"Free day, karaoke night",'','f',[
+ ['Daytime','Open','A Tokyo neighbourhood walk.'],
+ ['Evening','Karaoke box night','Big Echo, Karaoke-kan or Pasela, in Shinjuku or Shibuya.']]],
+[22,'t','','Golf day',"Dad's golf day",'','f',[
+ ['Morning','[Ginza](e3005)','The [Honma](https://mygolfspy.com/news-opinion/know-your-japanese-brands-honma/) and [Mizuno](https://mygolfspy.com/news-opinion/know-your-japanese-brands-mizuno/) flagship stores.'],
+ ['Afternoon','Kanda Ogawamachi','[Victoria Golf](https://www.fun-japan.jp/en/articles/14117) and the sports street.']]],
+[23,'t','','Ghibli',"Ghibli, and dinner out",'s','f',[
+ ['Morning','[Ghibli Museum](https://www.travelcaffeine.com/ghibli-museum-review-tips/)','In Mitaka.'],
+ ['Evening','Dinner out','A sushi counter is the idea. Day and place to be confirmed.']]],
+[24,'t','🎂','teamLab',"teamLab, and Dad's birthday",'s','f',[
+ ['All day','🎂 Happy birthday Dad',''],
+ ['Morning','[teamLab Planets](https://trulytokyo.com/teamlab-planets-toyosu/)','In Toyosu. Barefoot, through water and light.'],
+ ['Afternoon','[Small Worlds Tokyo](https://www.smallworlds.jp/en/)','In Ariake. A model city park where you get inserted as a figurine.']]],
+[25,'t','✈️','Fly home',"Last day",'g','f',[
+ ['Morning','Pack up and fly home','']]]
+];
+const byDay={};D.forEach(x=>byDay[x[0]]={d:x[0],leg:x[1],em:x[2],lab:x[3],title:x[4],s:x[5].includes('s'),g:x[5].includes('g'),mode:x[6],slots:x[7]});
+
+/* shown on the card for the day before */
+const TOMORROW={
+ 5:['Odakyu Romancecar to Hakone, about 85 min'],
+ 7:['Shinkansen to Kyoto, about 2 hr 15'],
+ 11:['Family: Himeji by shinkansen, about 50 min','Gray + Soph: Naoshima, about 2.5 hr'],
+ 13:['Train to Nozawa, about 5 hr door to door'],
+ 18:['Train to Tokyo, about 2.5 to 3 hr']
+};
+
+const cal=document.getElementById('cal');
+const cells={},rows={};
+for(let w=0;w<4;w++){
+  const row=document.createElement('div');row.className='week';
+  for(let i=0;i<7;i++){
+    const d=w*7+i+1, x=byDay[d];
+    if(!x){const o=document.createElement('div');o.className='c off';o.innerHTML='<span class="n">'+d+'</span>';row.append(o);continue;}
+    const b=document.createElement('button');
+    b.className='c '+L[x.leg][0]+(x.g?' go':'');
+    b.setAttribute('aria-expanded','false');
+    b.setAttribute('aria-label',WD[i]+' '+d+' Feb, '+x.lab);
+    cells[d]=b;rows[d]=row;row.append(b);
+    paint(d);
+    b.onclick=()=>pick(d);
+  }
+  cal.append(row);
+}
+function paint(d){
+  const x=byDay[d],b=cells[d],wi=(x.leg==='n'&&d<=18&&W[d])?'<span class="wi">'+W[d].icon+'</span>':'';
+  b.innerHTML=(x.s?'<i class="star"></i>':'')+'<span class="top"><span class="n">'+d+'</span>'+wi+'</span><span class="mid"><span>'+x.em+'</span><span class="mk">'+MK[x.mode]+'</span></span><span class="w">'+x.lab+'</span>';
+}
+
+let open=null;
+const panel=document.createElement('div');
+const wdOf=d=>WD[(d-1)%7];
+function pick(d,fromNav){
+  if(open===d&&!fromNav){close();return;}
+  if(open)cells[open].classList.remove('sel'),cells[open].setAttribute('aria-expanded','false');
+  open=d;const x=byDay[d];
+  cells[d].classList.add('sel');cells[d].setAttribute('aria-expanded','true');
+  panel.className='detail '+L[x.leg][0]+' tnum';
+  if(!fromNav||panel.dataset.d!=d){panel.style.animation='none';panel.offsetHeight;panel.style.animation='';}
+  panel.dataset.d=d;
+  const prev=byDay[d-1]?d-1:null,next=byDay[d+1]?d+1:null;
+  const w=W[d],tags=[MODE[x.mode]];
+  if(w)tags.push(w.icon+' '+w.max+'° / '+w.min+'°'+(w.snow>0?', snow '+Math.round(w.snow)+' cm':''));
+  const tm=TOMORROW[d];
+  const wasOpen=!!(panel.dataset.d==d&&panel.querySelector('.ideas[open]'));
+  panel.innerHTML='<div class="h"><b>'+wdOf(d)+' '+d+' · '+x.title+'</b><span>'+L[x.leg][1]+'</span></div>'+
+    '<div class="tags">'+tags.map(t=>'<em>'+t+'</em>').join('')+'</div>'+
+    x.slots.map(s=>'<div class="slot"><i>'+s[0]+'</i><div><b>'+lk(s[1])+'</b>'+(s[2]?'<p>'+lk(s[2])+'</p>':'')+'</div></div>').join('')+
+    ideasHTML(d,wasOpen)+
+    (tm?'<div class="tmr"><small>Tomorrow</small>'+tm.map(t=>'<div>'+t+'</div>').join('')+'</div>':'')+
+    '<div class="next"><button '+(prev?'':'disabled')+' data-g="'+prev+'">‹ '+(prev?wdOf(prev)+' '+prev:'')+'</button><button '+(next?'':'disabled')+' data-g="'+next+'">'+(next?wdOf(next)+' '+next:'')+' ›</button></div>';
+  panel.querySelectorAll('.next button').forEach(b=>{if(!b.disabled)b.onclick=()=>pick(+b.dataset.g,true)});
+  rows[d].after(panel);
+  panel.scrollIntoView({block:'nearest',behavior:'smooth'});
+}
+function close(){
+  if(open)cells[open].classList.remove('sel'),cells[open].setAttribute('aria-expanded','false');
+  open=null;panel.remove();
+}
+
+/* if there's time */
+const MORE=[
+['Tokyo','tok',[3,5],[
+ ['[Itoya Ginza](https://www.ito-ya.co.jp/)','13 floors of pens, washi and art supplies.'],
+ ['[Pokémon Café and Pokémon Center DX](https://thatmumtravellife.com/2024/10/24/visiting-the-pokemon-center-tokyo-dx-home-of-the-tokyo-pokemon-cafe/)','Nihonbashi. Pokémon HQ.'],
+ ['[Don Quijote](https://livejapan.com/en/in-tokyo/in-pref-tokyo/in-shinjuku/article-a0005734/)','Multi-floor discount megastore, tax-free.'],
+ ['[Sumida Hokusai Museum](e3054_hokusai)','Hokusai prints in a Kazuyo Sejima building.'],
+ ['[Aizome indigo workshop](https://amworkshops.com/tips-techniques/makers-craftsmen-buaisou-of-tokushima-japan/)','Hand-dye a tote in Asakusa.']]],
+['Hakone','hak',[6,7],[
+ ['[Pola Museum of Art](https://www.polamuseum.or.jp/en/)','Impressionists in a forest.'],
+ ['[Hakone Glass Forest](https://www.japan-experience.com/all-about-japan/hakone/museums-galleries/glass-forest)','Venetian glass. Kid-friendly and pretty.']]],
+['Kyoto','kyo',[8,13],[
+ ['[Nishiki Market](e3931)','Kyoto\'s kitchen. Snack as you walk.'],
+ ['[Pontocho alley](e3921)','Lantern-lit lane of restaurants and bars.'],
+ ['[Kichi Kichi omurice](https://haveyaseenjapan.com/kichi-kichi-omurice/)','Chef-as-show omurice.'],
+ ['[Plum blossom at Kitano Tenmangu](e3939)','About 1,500 trees in bloom mid-Feb.'],
+ ['[Tea ceremony](https://www.tea-kyoto.com/)','A proper sit-down, about 90 min.'],
+ ['[Kimono dress-up in Gion](e2101)','Get dressed up and photographed.'],
+ ['[Arashiyama half-day](e3912)','Bamboo grove, Tenryū-ji, Togetsukyo bridge.'],
+ ['[Saiho-ji moss temple](e3937)','Otherworldly moss garden.']]],
+['Tokyo','tok',[19,24],[
+ ['[Shibuya Sky](https://www.shibuya-scramble-square.com/sky/en/)','Open-air deck. Sunset is the play.'],
+ ['[Kakimori](https://kakimori.com/en/)','Make your own notebook, custom ink next door.'],
+ ['[Yayoi Kusama Museum](https://www.tokyoartbeat.com/en/articles/-/your-guide-to-the-yayoi-kusama-museum)','A Kusama deep dive.'],
+ ['[21_21 Design Sight](https://www.japan.travel/en/spot/1739/)','Tadao Ando, rotating design shows.'],
+ ['[Yanaka old town](e3068)','Quiet lanes, less touristy.'],
+ ['[Nakano Broadway](https://tokyocheapo.com/shopping-2/nakano-broadway-akihabara/)','Anime, manga, used goods.'],
+ ['[Yebisu Beer Museum](https://www.sapporobeer.jp/english/brewery/y_museum/)','Small museum and tasting bar.']]]
+];
+const ideasFor=d=>MORE.find(m=>d>=m[2][0]&&d<=m[2][1]);
+const ideasHTML=(d,keepOpen)=>{const m=ideasFor(d);if(!m)return '';
+  return '<details class="ideas"'+(keepOpen?' open':'')+'><summary><span>More in '+m[0]+'<small>'+m[3].length+' ideas</small></span></summary><ul>'+m[3].map(i=>'<li>'+lk(i[0])+'<p>'+i[1]+'</p></li>').join('')+'</ul></details>';};
+
+/* weather: Open-Meteo forecast, only exists about 16 days out. ?demo pretends the trip starts today. */
+
+const WMO=c=>c===0?'☀️':c<=2?'🌤️':c===3?'☁️':c<=48?'🌫️':c<=57?'🌦️':c<=67?'🌧️':c<=77?'❄️':c<=82?'🌦️':c<=86?'🌨️':'⛈️';
+const GEO={t:[35.68,139.69],h:[35.23,139.02],k:[35.01,135.77],n:[36.92,138.44]};
+const demo=/[?&]demo/.test(location.search);
+const today=new Date();today.setHours(0,0,0,0);
+const dateOf=d=>demo?new Date(today.getTime()+(d-2)*864e5):new Date(2027,1,d);
+const iso=t=>t.getFullYear()+'-'+String(t.getMonth()+1).padStart(2,'0')+'-'+String(t.getDate()).padStart(2,'0');
+async function loadWx(){
+  const horizon=new Date(today.getTime()+15*864e5);
+  const ranges=[];
+  D.forEach(x=>{const d=x[0],l=x[1],last=ranges[ranges.length-1];
+    if(last&&last.leg===l&&last.to===d-1)last.to=d;else ranges.push({leg:l,from:d,to:d});});
+  for(const r of ranges){
+    let a=dateOf(r.from),b=dateOf(r.to);
+    if(b<today||a>horizon)continue;
+    if(a<today)a=today;if(b>horizon)b=horizon;
+    const u='https://api.open-meteo.com/v1/forecast?latitude='+GEO[r.leg][0]+'&longitude='+GEO[r.leg][1]+'&daily=weather_code,temperature_2m_max,temperature_2m_min,snowfall_sum&timezone=Asia%2FTokyo&start_date='+iso(a)+'&end_date='+iso(b);
+    try{
+      const j=await (await fetch(u)).json();
+      j.daily.time.forEach((t,k)=>{
+        for(let d=r.from;d<=r.to;d++)if(iso(dateOf(d))===t)
+          W[d]={icon:WMO(j.daily.weather_code[k]),max:Math.round(j.daily.temperature_2m_max[k]),min:Math.round(j.daily.temperature_2m_min[k]),snow:j.daily.snowfall_sum[k]||0};
+      });
+    }catch(e){}
+  }
+  if(Object.keys(W).length){D.forEach(x=>paint(x[0]));if(open){cells[open].classList.add('sel');pick(open,true);}}
+}
+loadWx();
+
+/* header: sleeps to go, or the day of the trip */
+const sl=document.getElementById('sl');
+const first=new Date(2027,1,2),lastDay=new Date(2027,1,25);
+const n=Math.round((first-today)/864e5);
+if(n>0){sl.hidden=false;sl.textContent='🛫 '+n+' sleeps to go';}
+else if(today<=lastDay){sl.hidden=false;sl.textContent='Day '+(1-n)+' of 24';}
+
+const inTrip=today>=first&&today<=lastDay;
+if(inTrip)cells[today.getDate()].classList.add('today');
+pick(inTrip?today.getDate():(location.hash&&byDay[+location.hash.slice(1)]?+location.hash.slice(1):2));
+</script>
+</body></html>
